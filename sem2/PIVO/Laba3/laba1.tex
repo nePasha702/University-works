@@ -1,0 +1,294 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage{CJKutf8}
+\usepackage[russian, english]{babel}
+\newcommand{\RomanNumeralCaps}[1]
+    {\MakeUppercase{\romannumeral #1}}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol} % Колонки
+\usepackage{setspace} % Межстрочный интервал
+\usepackage{ragged2e} % Выравнивания текста по ширине в документе.
+\usepackage{fancyhdr} % Настройки верхнего и нижнего колонтитулов в документе.
+\usepackage{titlesec} % Стилей заголовков разделов в документе.
+\usepackage{enumitem} % Настройки списков в документе.
+\usepackage{graphicx}
+\usepackage{float} % "Плавающие" картинки
+\usepackage{wrapfig} % Обтекание фигур (таблиц, картинок и прочего)
+\usepackage[left=1.9cm,right=1.9cm, top=2.2cm,bottom=2.5cm]{geometry}
+
+\justifying % Выравнивает текст по ширине.
+\fancyhf{} % Очищает все верхние и нижние колонтитулы.
+\renewcommand{\headrulewidth}{0pt} % remove the header rule
+\cfoot{\vskip -1.5cm \thepage} % Устанавливает номер страницы в нижнем колонтитуле.
+
+\linespread{0.8} % Устанавливает межстрочный интервал в 0.84.
+
+
+\setlength{\columnsep}{0.5cm}
+\setcounter{page}{162}
+\renewcommand{\thesection}{\Roman{section}} % Устанавливает стиль нумерации разделов в виде заглавных римских цифр.
+
+\titleformat{\section}{\footnotesize\centering\sc}{\thesection.}{0cm}{}[] % Настраивает стиль заголовков разделов.
+
+\begin{document}
+
+\selectlanguage{english}
+\fontsize{10}{14}\selectfont
+\begin{multicols}{2}
+\setlength{\parindent}{0.8cm}
+\par
+\setlength{\parindent}{0.3cm}
+\fontsize{10}{15}\selectfont
+\begin{center}
+    \RomanNumeralCaps{5}. The subject area and ontology 
+    \\
+    of GI disease
+\end{center}
+\par
+Gastrointestinal (GI) diseases are one of the most common problems in medical practice worldwide. They cover a wide range of conditions, from functional disorders to serious pathologies such as peptic ulcers and cancer. According to the World Health Organization (WHO), GI diseases are the leading causes of death and disability worldwide.
+\par
+GI disease statistics:
+\setlength{\parindent}{0.0cm}
+\par
+\setlength{\parindent}{0.0cm}
+\fontsize{10}{15}\selectfont
+\begin{itemize}
+    \item according to the WHO, in 2020, GI diseases are the cause of death for more than 4 million people worldwide;
+    \item according to studies conducted in different countries, GI diseases account for up to 25\% of all reasons for visits to general practitioners;
+    \item some of the most common GI diseases include peptic ulcer disease, gastric and duodenal ulcers, gastritis, colitis, irritable bowel syndrome (IBS), gallstones, pancreatitis, and GI cancer;
+\end{itemize}
+\fontsize{8}{8}\selectfont
+\begin{minipage}{0.45\textwidth} % 45% ширины страницы для первой картинки
+    \includegraphics[width=0.99\textwidth]{third.jpg}
+    \caption{A fragment of the ontology of a medical record that allows you to store clarifying information}
+    \label{ris:third}
+\end{minipage}
+
+\setlength{\parindent}{0.8cm}
+\par
+\setlength{\parindent}{0.3cm}
+\fontsize{10}{15.93}\selectfont
+The International Classification of Diseases, 10th Revision (ICD-10) provides a coding system for diseases
+used in medical statistics and diagnosis. GI diseases
+are described in ICD-10 section K00-K93. This section includes a wide range of conditions, from dental
+problems to diseases of the liver, pancreas, and other
+GI organs. Diseases of this area include functional disorders, inflammatory processes, infections, tumors, and
+other pathologies specific to the GI tract. They can be
+manifested by various symptoms such as abdominal pain,
+diarrhea, constipation, nausea, vomiting and others. The
+definition and classification of GI diseases according to
+ICD-10 is important for statistical analysis, morbidity
+studies and health care planning.
+\par 
+Fig. ~\ref{ris:third} shows the formalization of the digestive organs domain using OSTIS technology. This formalization
+includes the development of an appropriate ontology
+structuring information about GI diseases according to
+the main sections of the International Classification of
+Diseases 10th Revision (ICD-10) [12].
+\par
+The first section of the digestive organ ontology covers
+the anatomical structure and functions of organs including stomach, liver, pancreas, intestine and others. Each
+organ is presented as a separate entity described by its
+anatomical features and functions. The subject matter is
+further divided into various sections, including functional
+disorders, infections, tumors and other pathologies, in
+accordance with ICD-10. Each section contains the relevant classes of diseases and their associated medical
+conditions, symptoms and treatments.
+\par
+In the context of the study of the subject area of
+digestive organs, special attention is paid to the stomach, considered on the example of gastritis in its usual
+and hyperacidic forms. Each disease corresponds to a
+reference marker set by the expert, which can be tissue
+or drug-specific. In addition, each disease has etiologic
+markers, which are multiple indicators that point to
+possible sources of the disease, such as bacteria, viruses,
+and other factors.
+\par
+Organs in the digestive system can be in three states:
+disease state (more than 80\% similarity), risk state (50%
+to 80\% similarity), and non-risk state (healthy organ, less
+than 50\% similarity). This approach allows the system to
+classify organs according to their current status based on
+analysis of user data.
+\par
+The formalization of the ontology fragment and its
+corresponding knowledge base, presented in the figure,
+allows not only to treat diseases after their manifestation,
+but also to carry out the tasks of early diagnosis and
+prevention of the disease at early stages. This methodology allows integrating reference and etiological markers
+of diseases into the knowledge base, which provides
+the system with access to information for analyzing and
+processing medical indicators at a deeper level, which is
+discussed in the works of Rostovtsev V. N. [13]–[15].
+
+\clearpage
+\end{multicols}
+
+%\begin{figure}[h] % 'h' - здесь
+    %\centering
+    %\includegraphics[width=0.88\textwidth]{figure 4.jpg}
+    %\caption{Fragment of medical record ontology}
+    %\label{fig:fourth}
+%\end{figure}
+
+\begin{figure}[h]
+    \center{\includegraphics[width=0.88\linewidth]{fourth.jpg}}
+    \caption{Fragment of medical record ontology}
+    \label{ris:fourth}
+\end{figure}
+
+\selectlanguage{english}
+\fontsize{10}{14}\selectfont
+\begin{multicols}{2}
+\setlength{\parindent}{0.8cm}
+\par
+\setlength{\parindent}{0.3cm}
+\fontsize{10}{15}\selectfont
+\begin{center}
+    \RomanNumeralCaps{6}. Conclusion 
+\end{center}
+\par
+The integration of Open Semantic Technology for
+Intelligent Systems (OSTIS) into medical information
+systems presents a promising solution to the challenge
+of data format incompatibility. OSTIS offers innovative
+tools and approaches for creating semantically compat-
+
+\columnbreak % Разделить колонки
+
+\noindent ible medical systems capable of efficiently processing
+and storing data regardless of their original format and
+structure.
+\par
+One of the key features of OSTIS is its ability to
+unify various types of knowledge into a single database.
+This centralized approach allows for the organization and
+
+\end{multicols}
+
+\selectlanguage{english}
+\fontsize{10}{14}\selectfont
+\begin{multicols}{2}
+\setlength{\parindent}{0.8cm}
+\par
+\setlength{\parindent}{0.3cm}
+\fontsize{10}{15}\selectfont
+
+\noindent structuring of medical data according to unified semantic
+standards, ensuring high compatibility and interoperability.
+\par
+Furthermore, the flexibility and adaptability of OSTIS
+enable the customization of systems to meet the specific
+requirements and standards of each country, including
+Belarus, Russia, and Kazakhstan. This adaptability
+facilitates seamless integration into existing healthcare
+infrastructures.
+\par
+The automatic conversion and matching of data in
+different formats represent a significant advantage of OSTIS.
+This capability eliminates compatibility issues and
+facilitates smooth information exchange between various
+medical systems and institutions, ultimately enhancing
+system efficiency and the quality of healthcare delivery.
+\par
+In summary, the application of OSTIS technology
+offers an effective and promising approach to addressing
+data format incompatibility in medical information
+systems. It fosters the creation of modern and innovative
+healthcare systems capable of adapting to diverse requirements
+and changes in the medical field, which is crucial
+for improving the quality and accessibility of healthcare
+in different countries.
+\par
+\setlength{\parindent}{0.0cm}
+\par
+\setlength{\parindent}{0.0cm}
+\fontsize{7}{7}\selectfont
+    \begin{thebibliography}{15}
+        \bibitem[1]{} Zhan Y. et al. Investigating the role of Cybersecurity’s perceived
+        threats in the adoption of health information systems. \textit{Heliyon},
+        2024, Vol. 10, № 1.
+        \bibitem[2]{} Yang P. et al. LMKG: A large-scale and multi-source medical knowledge graph for intelligent medicine applications. \textit{Knowledge-Based Systems}, 2024, Vol. 284, P. 111323.
+        \bibitem[3]{} Yakimov, D. A., Vygovskaya, N. V., Drozdov, I. V. Development
+        of a Medical Information System with Data Storage and Intelligent Image Analysis. \textit{Digital Transformation}, 2024, Vol. 30, № 1,
+        pp. 71–80.
+        \bibitem[4]{} Troqe B., Holmberg G., Lakemond N. Making decisions with AI in complex intelligent systems. \textit{s. Research Handbook on Artificial
+        Intelligence and Decision Making in Organizations}. Edward Elgar Publishing, 2024, pp. 160–178. [5] Shawwa L. The use of telemedicine
+        \bibitem[5]{} Shawwa L. The use of telemedicine in medical education and patient care. \textit{Cureus}, 2023, Vol. 15, №. 4.
+        \bibitem[6]{} Chauhan P. et al Breaking Barriers for Accessible Health Programs: The Role of Telemedicine in a Global Healthcare Transformation. \textit{Transformative Approaches to Patient Literacy and Healthcare Innovation}. IGI Global, 2024, pp. 283–307.
+        \bibitem[7]{} Kontseptsiya razvitiya elektronnogo zdravookhraneniya Respubliki Belarus’ na period do 2022 goda: prikaz Ministerstva zdravookhraneniya Respubliki Belarus’ ot 20 marta 2018 g. [Concept for the development of electronic health care of the Republic of Belarus for the period until 2022: order of the Ministry of Health of the Republic of Belarus dated March 20, 2018]. Ministerstvo zdravookhraneniya Respubliki Belarus’ [Ministry of Health of the Republic of Belarus], 2018, № 244
+        \bibitem[8]{} Ob utverzhdenii form pervichnoi meditsinskoi dokumentatsii v ambulatorno-poliklinicheskikh organizatsiyakh: prikaz Ministerstva zdravookhraneniya Respubliki Belarus’ ot 30 avgusta 2007 g. [On approval of forms of primary medical documentation in outpatient clinics: order of the Ministry of Health of the Republic of Belarus dated August 30, 2007.]. Ministerstvo zdravookhraneniya Respubliki Belarus’ [Ministry of Health of the Republic of Belarus], 2007, № 710
+        \bibitem[9]{} Ob utverzhdenii unifitsirovannykh form meditsinskoi dokumentatsii, ispol’zuemykh v meditsinskikh organizatsiyakh, okazyvayushchikh meditsinskuyu pomoshch’ v ambulatornykh usloviyakh, i poryadkov po ikh zapolneniyu: prikaz Ministerstva 
+        \\
+        zdravookhraneniya Rossiiskoi Federatsii ot 15 dekabrya 2014 g. [On approval of unified forms of medical documentation used in medical organizations providing medical care in outpatient settings, and procedures for filling them out: order of the Ministry of Health of the Russian Federation dated December 15, 2014.]. Ministerstvo zdravookhraneniya Respubliki Belarus’ [Ministry of Health of the Republic of Belarus], 2014, № 834n
+        \bibitem[10]{} Ob utverzhdenii form uchetnoi dokumentatsii v oblasti
+        zdravookhraneniya: prikaz i.o. Ministra zdravookhraneniya
+        Respubliki Kazakhstan ot 30 oktyabrya 2020 g. [On approval of
+        forms of accounting documentation in the field of healthcare:
+        order of acting. Minister of Health of the Republic of
+        Kazakhstan dated October 30, 2020]. Ministerstvo yustitsii
+        Respubliki Kazakhstan [Ministry of Justice of the Republic of
+        Kazakhstan], 2020, № KR DSM-175/2020.
+        \bibitem[11]{} O poryadke funktsionirovaniya i ispol’zovaniya tsentralizovannoi
+        informatsionnoi sistemy zdravookhraneniya: postanovlenie Soveta
+        Ministrov Respubliki Belarus’, 13 maya 2021 g. [On the procedure
+        for the functioning and use of a centralized health information
+        system: Resolution of the Council of Ministers of the Republic
+        of Belarus, May 13, 2021]. Natsional’nyi pravovoi Internetportal Respublsiki Belarus’ [National legal Internet portal of the
+        Republic of Belarus], 2021, № 267, 15.05.2021, 5/49050.
+        \bibitem[12]{}  International Statistical Classification of Diseases and Related
+        Health Problems (ICD-10): Official Version. Tenth revised edition. Geneva: World Health Organization, 1992.
+        \bibitem[13]{}  Rostovtsev, V. Intelligent health monitoring systems. Open semantic technologies for intelligent systems, 2023, Iss. 7, pp. 237–240.
+        \bibitem[14]{} Rostovtsev, V. N., Kobrinskii, B. A. Principles and possible ways
+        of building an intelligent system of integral medicine. Open
+        semantic technologies for intelligent systems, 2021, Iss. 5, pp.
+        225–228.
+        \bibitem[15]{}  Rostovtsev, V. N., Rodionova, O. S. Principles of ostis-system
+        of automatic diagnosis design. Open semantic technologies for
+        intelligent systems, 2018, pp.341–346
+    \end{thebibliography}
+
+\setlength{\parindent}{0.8cm}
+\par
+\setlength{\parindent}{0.3cm}
+\fontsize{10}{15}\selectfont
+\selectlanguage{russian}
+\begin{center}
+\fontsize{9}{13}\selectfont
+\textbf{ИНТЕГРАЦИЯ И СТАНДАРТИЗАЦИЯ В
+\\
+ИНТЕЛЛЕКТУАЛЬНЫХ МЕДИЦИНСКИХ
+\\
+СИСТЕМАХ НОВОГО ПОКОЛЕНИЯ НА
+\\
+ОСНОВЕ ТЕХНОЛОГИИ OSTIS}
+\end{center}
+\setlength{\parindent}{0.8cm}
+\par
+\setlength{\parindent}{0.3cm}
+\fontsize{9}{15}\selectfont
+\selectlanguage{russian}
+\par
+    Крищенович В. А., Сальников Д. А., Захарьев В. А.
+\setlength{\parindent}{0.8cm}
+\setlength{\parindent}{0.3cm}
+\fontsize{9}{15}\selectfont
+\selectlanguage{russian}
+\par
+В статье рассматривается интеграция международ-
+ных медицинских стандартов в России, Беларуси и
+Казахстане с применением семантических технологий.
+Предлагается подход к интеграции и стандартизации
+медицинских данных на основе применения техноло-
+гии OSTIS. Приводится пример разработки фрагмента
+онтологии на основе различных стандартов медицин-
+ских карт в интеллектуальных медицинских системах.
+Преимуществами такой интеграции являются улуч-
+шение обмена медицинской информацией, упрощение
+процесса диагностики и лечения, а также возможность
+создания единого медицинского пространства в рам-
+ках региона.
+\par
+\hfill Received 25.03.2024
+\end{multicols}
+
+\end{document}
