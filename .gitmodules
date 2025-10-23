@@ -1,0 +1,6 @@
+[submodule "sem2/PIVO/Laba3"]
+	path = sem2/PIVO/Laba3
+	url = https://github.com/nePasha702/Laba3.git
+[submodule "sem2/PPOIS/Laba3"]
+	path = sem2/PPOIS/Laba3
+	url = https://github.com/nePasha702/Laba3.git
