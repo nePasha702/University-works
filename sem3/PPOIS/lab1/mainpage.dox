@@ -64,9 +64,12 @@
  * @endcode
  * 
  * @section documentation Генерация документации
- * cd ~/Uni/PPOIS/lab1/docs # Для мультимножеств
+ * # Для мультимножеств:
+ * cd ~/Uni/PPOIS/lab1/docs
  * cat mainpage_multiset.dox
- * cd ~/Uni/PPOIS/lab1_2/docs # Для машины Поста
+ *
+ * # Для машины Поста:
+ * cd ~/Uni/PPOIS/lab1_2/docs 
  * cat mainpage_postmachine.dox
  * 
  * @section testing Покрытие тестами
