@@ -1,0 +1,488 @@
+/**
+ * @file PostMachineTape.h
+ * @brief Заголовочный файл для класса ленты машины Поста
+ * 
+ * Определяет класс Tape, который представляет бесконечную ленту
+ * с возможностью расширения в обе стороны.
+ */
+
+#ifndef POSTMACHINE_TAPE_H
+#define POSTMACHINE_TAPE_H
+
+#include <vector>
+#include <iostream>
+
+/**
+ * @class Tape
+ * @brief Класс, представляющий ленту машины Поста
+ * 
+ * Лента хранит символы в ячейках и имеет каретку для чтения/записи.
+ * При достижении края лента автоматически расширяется добавлением пустых ячеек.
+ * 
+ * @note Пустая ячейка обозначается символом ' '
+ */
+class Tape {
+private:
+    /** @brief Вектор ячеек ленты */
+    std::vector<char> cells;
+    
+    /** @brief Текущая позиция каретки */
+    int position;
+
+public:
+    /**
+     * @brief Конструктор по умолчанию
+     * 
+     * Создает ленту с одной пустой ячейкой, каретка в позиции 0
+     */
+    Tape();
+    
+    /**
+     * @brief Устанавливает символ в текущей позиции
+     * @param value Символ для записи
+     * 
+     * Если позиция выходит за границы, лента автоматически расширяется
+     */
+    void set(char value);
+    
+    /**
+     * @brief Получает символ из текущей позиции
+     * @return Символ в текущей позиции
+     * 
+     * Если позиция выходит за границы, возвращается ' '
+     */
+    char get() const;
+    
+    /**
+     * @brief Перемещает каретку влево
+     * 
+     * При достижении левого края лента расширяется слева
+     */
+    void moveLeft();
+    
+    /**
+     * @brief Перемещает каретку вправо
+     * 
+     * При достижении правого края лента расширяется справа
+     */
+    void moveRight();
+    
+    /**
+     * @brief Загружает состояние ленты из потока
+     * @param is Входной поток
+     * 
+     * Считывает строку до конца строки и инициализирует ленту
+     */
+    void loadFromStream(std::istream& is);
+    
+    /**
+     * @brief Сбрасывает ленту в начальное состояние
+     * 
+     * Оставляет одну пустую ячейку, каретка в позиции 0
+     */
+    void reset();
+    
+    /**
+     * @brief Оператор вывода для ленты
+     * @param os Выходной поток
+     * @param tape Выводимая лента
+     * @return Ссылка на поток
+     * 
+     * Выводит ленту с выделением текущей позиции каретки: [символ]
+     */
+    friend std::ostream& operator<<(std::ostream& os, const Tape& tape);
+};
+
+#endif
+
+
+
+/**
+ * @file PostMachineCommand.h
+ * @brief Заголовочный файл для команды машины Поста
+ * 
+ * Определяет класс PostMachineCommand, который представляет
+ * одну команду из программы машины Поста.
+ */
+
+#ifndef POSTMACHINE_COMMAND_H
+#define POSTMACHINE_COMMAND_H
+
+/**
+ * @class PostMachineCommand
+ * @brief Класс, представляющий команду машины Поста
+ * 
+ * Содержит все параметры для выполнения одного шага машины Поста:
+ * - Текущее состояние
+ * - Текущий символ на ленте
+ * - Новое состояние
+ * - Новый символ для записи
+ * - Направление сдвига каретки
+ */
+class PostMachineCommand {
+private:
+    /** @brief Текущее состояние перед выполнением команды */
+    int currentState;
+    
+    /** @brief Символ, который должен быть в текущей позиции ленты */
+    char currentSymbol;
+    
+    /** @brief Новое состояние после выполнения команды */
+    int nextState;
+    
+    /** @brief Символ для записи в текущую позицию */
+    char newSymbol;
+    
+    /** @brief Направление сдвига: -1 (влево), 0 (на месте), 1 (вправо) */
+    int shift;
+
+public:
+    /**
+     * @brief Конструктор команды
+     * @param cs Текущее состояние
+     * @param csym Текущий символ
+     * @param ns Новое состояние
+     * @param nsym Новый символ
+     * @param sh Сдвиг (-1, 0, 1)
+     */
+    PostMachineCommand(int cs, char csym, int ns, char nsym, int sh);
+    
+    /**
+     * @brief Получает текущее состояние
+     * @return Значение текущего состояния
+     */
+    int getCurrentState() const;
+    
+    /**
+     * @brief Получает текущий символ
+     * @return Символ, при котором команда применима
+     */
+    char getCurrentSymbol() const;
+    
+    /**
+     * @brief Получает новое состояние
+     * @return Значение нового состояния
+     */
+    int getNextState() const;
+    
+    /**
+     * @brief Получает новый символ
+     * @return Символ для записи
+     */
+    char getNewSymbol() const;
+    
+    /**
+     * @brief Получает направление сдвига
+     * @return -1 (влево), 0 (на месте), 1 (вправо)
+     */
+    int getShift() const;
+    
+    /**
+     * @brief Проверяет применимость команды
+     * @param state Текущее состояние машины
+     * @param symbol Символ на ленте
+     * @return true, если команда применима
+     */
+    bool matches(int state, char symbol) const;
+};
+
+#endif
+
+
+
+/**
+ * @file PostMachineCommand.cpp
+ * @brief Реализация класса PostMachineCommand
+ */
+
+#include "PostMachineCommand.h"
+
+PostMachineCommand::PostMachineCommand(int cs, char csym, int ns, char nsym, int sh)
+    : currentState(cs), currentSymbol(csym), 
+      nextState(ns), newSymbol(nsym), shift(sh) {}
+
+int PostMachineCommand::getCurrentState() const {
+    return currentState;
+}
+
+char PostMachineCommand::getCurrentSymbol() const {
+    return currentSymbol;
+}
+
+int PostMachineCommand::getNextState() const {
+    return nextState;
+}
+
+char PostMachineCommand::getNewSymbol() const {
+    return newSymbol;
+}
+
+int PostMachineCommand::getShift() const {
+    return shift;
+}
+
+bool PostMachineCommand::matches(int state, char symbol) const {
+    return (currentState == state) && (currentSymbol == symbol);
+}
+
+
+
+/**
+ * @file PostMachine.h
+ * @brief Заголовочный файл для машины Поста
+ * 
+ * Определяет основной класс PostMachine, который управляет
+ * выполнением программы на машине Поста.
+ */
+
+#ifndef POSTMACHINE_H
+#define POSTMACHINE_H
+
+#include "PostMachineTape.h"
+#include "PostMachineCommand.h"
+#include <vector>
+#include <sstream>
+#include <string>
+
+/**
+ * @class PostMachine
+ * @brief Основной класс машины Поста
+ * 
+ * Управляет состоянием машины, лентой и программой.
+ * Выполняет команды и обрабатывает переходы между состояниями.
+ */
+class PostMachine {
+private:
+    /** @brief Текущее состояние машины (начинается с 1) */
+    int currentState;
+    
+    /** @brief Лента машины Поста */
+    Tape tape;
+    
+    /** @brief Вектор команд программы */
+    std::vector<PostMachineCommand> commands;
+
+public:
+    /**
+     * @brief Конструктор по умолчанию
+     * 
+     * Инициализирует машину в состоянии 1 с пустой лентой
+     */
+    PostMachine() : currentState(1) {}
+    
+    // ===== Методы для тестирования =====
+    
+    /**
+     * @brief Получает текущее состояние
+     * @return Значение текущего состояния
+     */
+    int getCurrentState() const { return currentState; }
+    
+    /**
+     * @brief Получает символ в текущей позиции ленты
+     * @return Символ под кареткой
+     */
+    char getTapeSymbol() const { return tape.get(); }
+    
+    /**
+     * @brief Перемещает каретку влево
+     */
+    void moveTapeLeft() { tape.moveLeft(); }
+    
+    /**
+     * @brief Перемещает каретку вправо
+     */
+    void moveTapeRight() { tape.moveRight(); }
+    
+    /**
+     * @brief Загружает состояние ленты из строки
+     * @param state Строка с состоянием ленты
+     */
+    void loadTapeFromString(const std::string& state);
+    
+    /**
+     * @brief Выводит правила программы в поток
+     * @param os Выходной поток
+     */
+    void printRules(std::ostream& os) const;
+    
+    // ===== Основные методы =====
+    
+    /**
+     * @brief Загружает программу из потока
+     * @param is Входной поток
+     * 
+     * Формат: "1 0 2 1 R" (тек. состояние, символ, нов. состояние, новый символ, сдвиг)
+     * Сдвиг: L (влево), R (вправо)
+     */
+    void loadFromStream(std::istream& is);
+    
+    /**
+     * @brief Добавляет правило в программу
+     * @param cs Текущее состояние
+     * @param csym Текущий символ
+     * @param ns Новое состояние
+     * @param nsym Новый символ
+     * @param shift Сдвиг (-1: L, 1: R, 0: stay)
+     */
+    void addRule(int cs, char csym, int ns, char nsym, int shift);
+    
+    /**
+     * @brief Устанавливает символ в текущей позиции
+     * @param value Символ для записи
+     */
+    void setTapeValue(char value);
+    
+    /**
+     * @brief Выполняет один шаг программы
+     * @return true, если шаг выполнен, false если нет подходящего правила
+     */
+    bool step();
+    
+    /**
+     * @brief Запускает полное выполнение программы
+     * @param log=true Включить логирование шагов
+     */
+    void run(bool log = false);
+    
+    /**
+     * @brief Сбрасывает машину в начальное состояние
+     */
+    void reset();
+    
+    /**
+     * @brief Оператор вывода для машины
+     * @param os Выходной поток
+     * @param pm Выводимая машина
+     * @return Ссылка на поток
+     */
+    friend std::ostream& operator<<(std::ostream& os, const PostMachine& pm);
+};
+
+#endif
+
+
+
+/**
+ * @file Menu.h
+ * @brief Заголовочный файл для интерактивного меню
+ * 
+ * Определяет класс Menu для управления машиной Поста через консольный интерфейс.
+ */
+
+#ifndef MENU_H
+#define MENU_H
+
+#include "PostMachine.h"
+#include <string>
+
+/**
+ * @class Menu
+ * @brief Класс для интерактивного меню управления машиной Поста
+ * 
+ * Предоставляет 9 основных функций для работы с машиной Поста:
+ * 1. Загрузка программы из файла
+ * 2. Загрузка состояния ленты из файла
+ * 3. Ручное добавление команды
+ * 4. Просмотр всех команд
+ * 5. Изменение значения на ленте
+ * 6. Полная интерпретация программы
+ * 7. Пошаговое выполнение
+ * 8. Сброс состояния
+ * 9. Показ текущего состояния
+ */
+class Menu {
+public:
+    /**
+     * @brief Отображает меню в консоли
+     */
+    static void displayMenu();
+    
+    /**
+     * @brief Обрабатывает пользовательский ввод
+     * @param machine Машина Поста для управления
+     */
+    static void handleUserInput(PostMachine& machine);
+    
+    /**
+     * @brief Загружает программу из файла
+     * @param machine Машина Поста
+     */
+    static void loadProgramFromFile(PostMachine& machine);
+    
+    /**
+     * @brief Загружает состояние ленты из консоли
+     * @param machine Машина Поста
+     */
+    static void loadTapeState(PostMachine& machine);
+    
+    /**
+     * @brief Добавляет команду вручную
+     * @param machine Машина Поста
+     */
+    static void addRuleManually(PostMachine& machine);
+    
+    /**
+     * @brief Просматривает все команды программы
+     * @param machine Машина Поста
+     */
+    static void viewAllRules(const PostMachine& machine);
+    
+    /**
+     * @brief Изменяет значение на ленте
+     * @param machine Машина Поста
+     */
+    static void modifyTapeValue(PostMachine& machine);
+    
+    /**
+     * @brief Запускает полную интерпретацию
+     * @param machine Машина Поста
+     * @param log=true Признак логирования
+     */
+    static void runFullInterpretation(PostMachine& machine, bool log);
+    
+    /**
+     * @brief Выполняет один шаг программы
+     * @param machine Машина Поста
+     * @param log=true Признак логирования
+     */
+    static void executeSingleStep(PostMachine& machine, bool log);
+    
+    /**
+     * @brief Сбрасывает состояние машины
+     * @param machine Машина Поста
+     */
+    static void resetState(PostMachine& machine);
+    
+    /**
+     * @brief Показывает текущее состояние
+     * @param machine Машина Поста
+     */
+    static void showCurrentState(const PostMachine& machine);
+};
+
+#endif
+
+
+
+/**
+ * @file main.cpp
+ * @brief Точка входа для машины Поста
+ * 
+ * Инициализирует машину и запускает интерактивное меню.
+ */
+
+#include "include/Menu.h"
+#include <iostream>
+
+/**
+ * @brief Точка входа в программу
+ * @return Код завершения (0 при успехе)
+ */
+int main() {
+    PostMachine machine;
+    std::cout << "Добро пожаловать в Машину Поста!\n";
+    Menu::handleUserInput(machine);
+    std::cout << "Работа завершена\n";
+    return 0;
+}
