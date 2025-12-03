@@ -193,32 +193,25 @@ void runMenu() {
                 std::cout << "A = " << A << std::endl;
                 std::cout << "B = " << B << std::endl;
                 
-                // Оператор =
                 Multiset C = A;
                 std::cout << "C = A: " << C << std::endl;
                 
-                // Оператор +
                 Multiset D = A + B;
                 std::cout << "A + B: " << D << std::endl;
                 
-                // Оператор +=
                 C += B;
                 std::cout << "C += B: " << C << std::endl;
                 
-                // Оператор *
                 Multiset E = A * B;
                 std::cout << "A * B: " << E << std::endl;
                 
-                // Оператор *=
                 C = A;
                 C *= B;
                 std::cout << "C *= B: " << C << std::endl;
                 
-                // Оператор -
                 Multiset F = A - B;
                 std::cout << "A - B: " << F << std::endl;
                 
-                // Оператор -=
                 C = A;
                 C -= B;
                 std::cout << "C -= B: " << C << std::endl;
