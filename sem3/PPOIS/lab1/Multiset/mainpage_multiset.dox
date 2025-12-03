@@ -1,0 +1,768 @@
+/**
+ * @file Multiset.h
+ * @brief Заголовочный файл для работы с мультимножествами
+ * 
+ * Содержит объявления классов для реализации мультимножеств с поддержкой вложенности.
+ * Использует паттерн "Компоновщик" для представления вложенных множеств как элементов.
+ */
+
+#ifndef MULTISET_H
+#define MULTISET_H
+
+#include <iostream>
+#include <vector>
+#include <memory>
+#include <string>
+
+/**
+ * @class MultisetElement
+ * @brief Абстрактный базовый класс для всех элементов мультимножества
+ * 
+ * Определяет интерфейс для полиморфной работы с элементами мультимножества.
+ * Элементом может быть как простой символ, так и другое мультимножество.
+ * 
+ * @note Все производные классы должны реализовывать виртуальные методы.
+ */
+class MultisetElement {
+public:
+    /**
+     * @brief Виртуальный деструктор
+     * 
+     * Обеспечивает корректное удаление объектов производных классов
+     */
+    virtual ~MultisetElement() = default;
+    
+    /**
+     * @brief Выводит элемент в поток
+     * @param os Выходной поток
+     * 
+     * Используется для отладки и отображения состояния мультимножества
+     */
+    virtual void print(std::ostream& os) const = 0;
+    
+    /**
+     * @brief Создает глубокую копию элемента
+     * @return Уникальный указатель на копию элемента
+     * 
+     * Используется в операциях копирования мультимножеств
+     */
+    virtual std::unique_ptr<MultisetElement> clone() const = 0;
+    
+    /**
+     * @brief Проверяет равенство с другим элементом
+     * @param other Указатель на сравниваемый элемент
+     * @return true, если элементы эквивалентны
+     * 
+     * @note Для корректной работы необходимо реализовать в производных классах
+     */
+    virtual bool equals(const MultisetElement* other) const = 0;
+    
+    /**
+     * @brief Вычисляет хеш-код элемента
+     * @return Хеш-код для использования в хэш-таблицах
+     * 
+     * @warning Не реализован для мультимножеств, только для простых элементов
+     */
+    virtual size_t hash() const = 0;
+};
+
+/**
+ * @class SimpleElement
+ * @brief Реализация простого элемента мультимножества (символ)
+ * 
+ * Представляет собой один символ, который может быть частью мультимножества.
+ * Наследуется от MultisetElement для обеспечения полиморфизма.
+ */
+class SimpleElement : public MultisetElement {
+private:
+    char value; ///< Значение элемента (символ)
+    
+public:
+    /**
+     * @brief Конструктор элемента
+     * @param val Значение элемента
+     * 
+     * @throw std::invalid_argument Если val не является буквой
+     */
+    explicit SimpleElement(char val);
+    
+    /**
+     * @brief Получает значение элемента
+     * @return Текущее значение элемента
+     */
+    char getValue() const;
+    
+    // Реализация виртуальных методов
+    void print(std::ostream& os) const override;
+    std::unique_ptr<MultisetElement> clone() const override;
+    bool equals(const MultisetElement* other) const override;
+    size_t hash() const override;
+};
+
+/**
+ * @class Multiset
+ * @brief Основной класс мультимножества с поддержкой вложенности
+ * 
+ * Реализует структуру данных "мультимножество", где элементом может быть:
+ * - Простой символ (SimpleElement)
+ * - Другое мультимножество (Multiset)
+ * 
+ * Поддерживает операции:
+ * - Объединение (+)
+ * - Пересечение (*)
+ * - Разность (-)
+ * - Клонирование
+ * - Сравнение
+ * 
+ * @note Для работы с мультимножеством можно использовать строковое представление
+ *       в формате "{a, a, {b, c}}"
+ */
+class Multiset : public MultisetElement {
+private:
+    /** @brief Вектор элементов мультимножества */
+    std::vector<std::unique_ptr<MultisetElement>> elements;
+    
+    /**
+     * @brief Парсит строковое представление в структуру данных
+     * @param str Исходная строка
+     * @param pos Текущая позиция в строке
+     * @throw std::invalid_argument При некорректном формате
+     */
+    void parseFromString(const std::string& str, size_t& pos);
+    
+    /**
+     * @brief Удаляет элемент по индексу
+     * @param index Индекс удаляемого элемента
+     * @throw std::out_of_range Если индекс выходит за границы вектора
+     */
+    void removeElementByIndex(size_t index);
+    
+public:
+    /**
+     * @brief Конструктор по умолчанию
+     * 
+     * Создает пустое мультимножество
+     */
+    Multiset() = default;
+    
+    /**
+     * @brief Конструктор копирования
+     * @param other Копируемое мультимножество
+     * 
+     * Выполняет глубокое копирование всех элементов
+     */
+    Multiset(const Multiset& other);
+    
+    /**
+     * @brief Конструктор из строки
+     * @param str Строковое представление мультимножества
+     * 
+     * Примеры корректных строк:
+     * - "{a, b, c}"
+     * - "{a, {b, c}}"
+     * - "{(), a}" (пустое множество)
+     * 
+     * @throw std::invalid_argument При некорректном формате
+     */
+    explicit Multiset(const std::string& str);
+    
+    /**
+     * @brief Конструктор из C-строки
+     * @param str C-строка с представлением мультимножества
+     * @see Multiset(const std::string&)
+     */
+    explicit Multiset(const char* str);
+    
+    /**
+     * @brief Виртуальный деструктор
+     * 
+     * Гарантирует корректное удаление всех элементов
+     */
+    ~Multiset() override = default;
+    
+    /**
+     * @brief Оператор присваивания
+     * @param other Присваиваемое мультимножество
+     * @return Ссылка на текущий объект
+     * 
+     * Выполняет глубокое копирование с защитой от самоприсваивания
+     */
+    Multiset& operator=(const Multiset& other);
+    
+    /**
+     * @brief Добавляет простой элемент
+     * @param element Символ для добавления
+     */
+    void addElement(char element);
+    
+    /**
+     * @brief Добавляет вложенное мультимножество
+     * @param element Мультимножество для добавления
+     */
+    void addElement(const Multiset& element);
+    
+    /**
+     * @brief Удаляет один экземпляр элемента
+     * @param element Символ для удаления
+     * 
+     * Если элемент не найден, ничего не происходит
+     */
+    void removeElement(char element);
+    
+    /**
+     * @brief Очищает мультимножество
+     * 
+     * Удаляет все элементы, включая вложенные множества
+     */
+    void clear();
+    
+    /**
+     * @brief Проверяет, является ли множество пустым
+     * @return true, если множество пустое
+     */
+    bool isEmpty() const;
+    
+    /**
+     * @brief Проверяет принадлежность символа
+     * @param element Символ для проверки
+     * @return true, если символ есть в множестве
+     */
+    bool contains(char element) const;
+    
+    /**
+     * @brief Проверяет принадлежность вложенного множества
+     * @param element Множество для проверки
+     * @return true, если множество есть в текущем
+     */
+    bool contains(const Multiset& element) const;
+    
+    /**
+     * @brief Вычисляет мощность множества
+     * @return Общее количество элементов (с учетом кратности)
+     */
+    size_t cardinality() const;
+    
+    /**
+     * @brief Считает количество вхождений символа
+     * @param element Символ для подсчета
+     * @return Количество вхождений
+     */
+    size_t count(char element) const;
+    
+    /**
+     * @brief Оператор равенства
+     * @param other Сравниваемое множество
+     * @return true, если множества равны
+     * 
+     * Порядок элементов не важен, учитывается кратность
+     */
+    bool operator==(const Multiset& other) const;
+    
+    /**
+     * @brief Оператор неравенства
+     * @param other Сравниваемое множество
+     * @return true, если множества не равны
+     */
+    bool operator!=(const Multiset& other) const;
+    
+    /**
+     * @brief Оператор объединения
+     * @param other Множество для объединения
+     * @return Новое множество с элементами из обоих
+     * 
+     * Объединение включает все элементы с сохранением кратности
+     */
+    Multiset operator+(const Multiset& other) const;
+    
+    /**
+     * @brief Оператор объединения с присваиванием
+     * @param other Множество для объединения
+     * @return Ссылка на текущее множество
+     */
+    Multiset& operator+=(const Multiset& other);
+    
+    /**
+     * @brief Оператор пересечения
+     * @param other Множество для пересечения
+     * @return Новое множество с общими элементами
+     * 
+     * Для каждого элемента берется минимальная кратность
+     */
+    Multiset operator*(const Multiset& other) const;
+    
+    /**
+     * @brief Оператор пересечения с присваиванием
+     * @param other Множество для пересечения
+     * @return Ссылка на текущее множество
+     */
+    Multiset& operator*=(const Multiset& other);
+    
+    /**
+     * @brief Оператор разности
+     * @param other Множество-вычитаемое
+     * @return Новое множество с элементами, не входящими в other
+     */
+    Multiset operator-(const Multiset& other) const;
+    
+    /**
+     * @brief Оператор разности с присваиванием
+     * @param other Множество-вычитаемое
+     * @return Ссылка на текущее множество
+     */
+    Multiset& operator-=(const Multiset& other);
+    
+    /**
+     * @brief Оператор вывода в поток
+     * @param os Выходной поток
+     * @param multiset Выводимое множество
+     * @return Ссылка на поток
+     */
+    friend std::ostream& operator<<(std::ostream& os, const Multiset& multiset);
+    
+    /**
+     * @brief Оператор ввода из потока
+     * @param is Входной поток
+     * @param multiset Считываемое множество
+     * @return Ссылка на поток
+     */
+    friend std::istream& operator>>(std::istream& is, Multiset& multiset);
+    
+    // Реализация виртуальных методов MultisetElement
+    void print(std::ostream& os) const override;
+    std::unique_ptr<MultisetElement> clone() const override;
+    bool equals(const MultisetElement* other) const override;
+    size_t hash() const override;
+    
+    /**
+     * @brief Преобразует множество в строку
+     * @return Строковое представление множества
+     */
+    std::string toString() const;
+};
+
+#endif // MULTISET_H
+
+
+
+/**
+ * @file Multiset.cpp
+ * @brief Реализация классов для работы с мультимножествами
+ * 
+ * Содержит определения всех методов, объявленных в Multiset.h.
+ * Реализует логику парсинга строк, операций над множествами и работы с элементами.
+ */
+
+#include "Multiset.h"
+#include <sstream>
+#include <algorithm>
+#include <cctype>
+#include <stdexcept>
+#include <functional>
+
+// ===== Реализация SimpleElement =====
+
+SimpleElement::SimpleElement(char val) : value(val) {
+    if (!std::isalpha(val)) {
+        throw std::invalid_argument("Element must be a letter");
+    }
+}
+
+char SimpleElement::getValue() const {
+    return value;
+}
+
+void SimpleElement::print(std::ostream& os) const {
+    os << value;
+}
+
+std::unique_ptr<MultisetElement> SimpleElement::clone() const {
+    return std::make_unique<SimpleElement>(value);
+}
+
+bool SimpleElement::equals(const MultisetElement* other) const {
+    if (auto se = dynamic_cast<const SimpleElement*>(other)) {
+        return value == se->value;
+    }
+    return false;
+}
+
+size_t SimpleElement::hash() const {
+    return std::hash<char>()(value);
+}
+
+// ===== Вспомогательные функции =====
+
+/**
+ * @brief Пропускает пробельные символы в строке
+ * @param str Исходная строка
+ * @param pos Текущая позиция
+ */
+static void skipWhitespace(const std::string& str, size_t& pos) {
+    while (pos < str.length() && std::isspace(str[pos])) {
+        ++pos;
+    }
+}
+
+// ===== Реализация Multiset =====
+
+void Multiset::parseFromString(const std::string& str, size_t& pos) {
+    skipWhitespace(str, pos);
+    
+    if (pos >= str.length() || str[pos] != '{') {
+        throw std::invalid_argument("Invalid multiset format: expected '{'");
+    }
+    
+    ++pos; // Пропускаем '{'
+    
+    while (pos < str.length() && str[pos] != '}') {
+        skipWhitespace(str, pos);
+        
+        if (str[pos] == '{') {
+            // Вложенное множество
+            Multiset nested;
+            nested.parseFromString(str, pos);
+            elements.push_back(std::make_unique<Multiset>(std::move(nested)));
+        } else if (std::isalpha(str[pos])) {
+            // Простой элемент
+            elements.push_back(std::make_unique<SimpleElement>(str[pos]));
+            ++pos;
+        } else if (str[pos] == '(' && pos + 1 < str.length() && str[pos + 1] == ')') {
+            // Пустое множество
+            elements.push_back(std::make_unique<Multiset>());
+            pos += 2;
+        } else {
+            throw std::invalid_argument("Invalid character in multiset");
+        }
+        
+        skipWhitespace(str, pos);
+        
+        // Если следующий символ не '}' и не ',', то ошибка
+        if (pos < str.length() && str[pos] != '}' && str[pos] != ',') {
+            throw std::invalid_argument("Expected ',' or '}'");
+        }
+        
+        // Пропускаем запятую, если есть
+        if (pos < str.length() && str[pos] == ',') {
+            ++pos;
+        }
+    }
+    
+    if (pos >= str.length() || str[pos] != '}') {
+        throw std::invalid_argument("Invalid multiset format: expected '}'");
+    }
+    
+    ++pos; // Пропускаем '}'
+}
+
+Multiset::Multiset(const Multiset& other) {
+    for (const auto& elem : other.elements) {
+        elements.push_back(elem->clone());
+    }
+}
+
+Multiset::Multiset(const std::string& str) {
+    size_t pos = 0;
+    parseFromString(str, pos);
+    
+    // После парсинга не должно оставаться символов, кроме пробелов
+    skipWhitespace(str, pos);
+    if (pos != str.length()) {
+        throw std::invalid_argument("Extra characters after multiset");
+    }
+}
+
+Multiset::Multiset(const char* str) : Multiset(std::string(str)) {}
+
+Multiset& Multiset::operator=(const Multiset& other) {
+    if (this != &other) {
+        clear();
+        for (const auto& elem : other.elements) {
+            elements.push_back(elem->clone());
+        }
+    }
+    return *this;
+}
+
+void Multiset::addElement(char element) {
+    elements.push_back(std::make_unique<SimpleElement>(element));
+}
+
+void Multiset::addElement(const Multiset& element) {
+    elements.push_back(std::make_unique<Multiset>(element));
+}
+
+void Multiset::removeElement(char element) {
+    for (size_t i = 0; i < elements.size(); ++i) {
+        if (auto se = dynamic_cast<SimpleElement*>(elements[i].get())) {
+            if (se->getValue() == element) {
+                removeElementByIndex(i);
+                return;
+            }
+        }
+    }
+}
+
+void Multiset::removeElementByIndex(size_t index) {
+    if (index < elements.size()) {
+        elements.erase(elements.begin() + index);
+    }
+}
+
+void Multiset::clear() {
+    elements.clear();
+}
+
+bool Multiset::isEmpty() const {
+    return elements.empty();
+}
+
+bool Multiset::contains(char element) const {
+    for (const auto& elem : elements) {
+        if (auto se = dynamic_cast<const SimpleElement*>(elem.get())) {
+            if (se->getValue() == element) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+bool Multiset::contains(const Multiset& element) const {
+    for (const auto& elem : elements) {
+        if (auto ms = dynamic_cast<const Multiset*>(elem.get())) {
+            if (*ms == element) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+size_t Multiset::cardinality() const {
+    return elements.size();
+}
+
+size_t Multiset::count(char element) const {
+    size_t cnt = 0;
+    for (const auto& elem : elements) {
+        if (auto se = dynamic_cast<const SimpleElement*>(elem.get())) {
+            if (se->getValue() == element) {
+                ++cnt;
+            }
+        }
+    }
+    return cnt;
+}
+
+bool Multiset::operator==(const Multiset& other) const {
+    if (elements.size() != other.elements.size()) {
+        return false;
+    }
+    
+    // Так как порядок не важен, мы должны проверить, что каждый элемент этого множества
+    // содержится в другом столько же раз.
+    std::vector<bool> used(other.elements.size(), false);
+    
+    for (const auto& elem : elements) {
+        bool found = false;
+        for (size_t j = 0; j < other.elements.size(); ++j) {
+            if (!used[j] && elem->equals(other.elements[j].get())) {
+                used[j] = true;
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+bool Multiset::operator!=(const Multiset& other) const {
+    return !(*this == other);
+}
+
+Multiset Multiset::operator+(const Multiset& other) const {
+    Multiset result = *this;
+    result += other;
+    return result;
+}
+
+Multiset& Multiset::operator+=(const Multiset& other) {
+    for (const auto& elem : other.elements) {
+        elements.push_back(elem->clone());
+    }
+    return *this;
+}
+
+Multiset Multiset::operator*(const Multiset& other) const {
+    Multiset result;
+    
+    // Копируем элементы другого множества, чтобы отмечать использованные
+    std::vector<std::unique_ptr<MultisetElement>> otherElements;
+    for (const auto& elem : other.elements) {
+        otherElements.push_back(elem->clone());
+    }
+    
+    for (const auto& elem : elements) {
+        for (auto& otherElem : otherElements) {
+            if (otherElem && elem->equals(otherElem.get())) {
+                result.elements.push_back(elem->clone());
+                otherElem.reset(); // Помечаем как использованный
+                break;
+            }
+        }
+    }
+    
+    return result;
+}
+
+Multiset& Multiset::operator*=(const Multiset& other) {
+    *this = *this * other;
+    return *this;
+}
+
+Multiset Multiset::operator-(const Multiset& other) const {
+    Multiset result;
+    
+    // Копируем элементы другого множества, чтобы отмечать использованные
+    std::vector<std::unique_ptr<MultisetElement>> otherElements;
+    for (const auto& elem : other.elements) {
+        otherElements.push_back(elem->clone());
+    }
+    
+    for (const auto& elem : elements) {
+        bool found = false;
+        for (auto& otherElem : otherElements) {
+            if (otherElem && elem->equals(otherElem.get())) {
+                otherElem.reset(); // Помечаем как использованный
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            result.elements.push_back(elem->clone());
+        }
+    }
+    
+    return result;
+}
+
+Multiset& Multiset::operator-=(const Multiset& other) {
+    *this = *this - other;
+    return *this;
+}
+
+void Multiset::print(std::ostream& os) const {
+    os << "{";
+    for (size_t i = 0; i < elements.size(); ++i) {
+        if (i > 0) {
+            os << ", ";
+        }
+        elements[i]->print(os);
+    }
+    os << "}";
+}
+
+std::ostream& operator<<(std::ostream& os, const Multiset& multiset) {
+    multiset.print(os);
+    return os;
+}
+
+std::istream& operator>>(std::istream& is, Multiset& multiset) {
+    std::string str;
+    // Читаем всю строку до конца (может быть с пробелами)
+    std::getline(is, str);
+    multiset = Multiset(str);
+    return is;
+}
+
+std::unique_ptr<MultisetElement> Multiset::clone() const {
+    return std::make_unique<Multiset>(*this);
+}
+
+bool Multiset::equals(const MultisetElement* other) const {
+    if (auto ms = dynamic_cast<const Multiset*>(other)) {
+        return *this == *ms;
+    }
+    return false;
+}
+
+size_t Multiset::hash() const {
+    size_t h = 0;
+    for (const auto& elem : elements) {
+        h ^= elem->hash() + 0x9e3779b9 + (h << 6) + (h >> 2);
+    }
+    return h;
+}
+
+std::string Multiset::toString() const {
+    std::ostringstream oss;
+    oss << *this;
+    return oss.str();
+}
+
+
+
+/**
+ * @file main.cpp
+ * @brief Демонстрационная программа для мультимножеств
+ * 
+ * Показывает примеры использования класса Multiset:
+ * - Создание из строки
+ * - Добавление элементов
+ * - Удаление элементов
+ * - Операции над множествами
+ * - Вывод результатов
+ */
+
+#include "include/Multiset.h"
+#include <iostream>
+
+/**
+ * @brief Точка входа в программу
+ * @return Код завершения (0 при успехе)
+ */
+int main() {
+    // Пример 1: Создание мультимножества из строки
+    Multiset m1("{a, a, b, {c, d}}");
+    std::cout << "Мультимножество 1: " << m1 << std::endl;
+
+    // Пример 2: Добавление элементов
+    m1.addElement('e');
+    
+    // Создаем вложенное множество
+    Multiset nested("{x, y}");
+    m1.addElement(nested);
+    std::cout << "После добавления: " << m1 << std::endl;
+
+    // Пример 3: Удаление элемента
+    m1.removeElement('a');
+    std::cout << "После удаления 'a': " << m1 << std::endl;
+
+    // Пример 4: Объединение
+    Multiset m2("{b, c, f}");
+    Multiset m3 = m1 + m2;
+    std::cout << "Объединение: " << m3 << std::endl;
+
+    // Пример 5: Пересечение
+    Multiset m4 = m1 * m2;
+    std::cout << "Пересечение: " << m4 << std::endl;
+
+    // Пример 6: Разность
+    Multiset m5 = m1 - m2;
+    std::cout << "Разность: " << m5 << std::endl;
+
+    // Пример 7: Проверка принадлежности
+    if (m1.contains('b')) {
+        std::cout << "m1 содержит 'b' " << m1.count('b') << " раз(а)" << std::endl;
+    }
+    
+    // Пример 8: Проверка на пустоту и мощность
+    std::cout << "Мощность m1: " << m1.cardinality() << std::endl;
+    std::cout << "m1 пустое? " << (m1.isEmpty() ? "Да" : "Нет") << std::endl;
+    
+    return 0;
+}
