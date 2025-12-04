@@ -35,7 +35,6 @@ size_t SimpleElement::hash() const {
 
 // Класс Multiset
 
-// Дополнительная функция для пропуска пробелов
 static void skipSpaces(const std::string& str, size_t& pos) {
     while (pos < str.length() && std::isspace(str[pos])) {
         ++pos;
@@ -55,7 +54,6 @@ void Multiset::parseFromString(const std::string& str, size_t& pos) {
         skipSpaces(str, pos);
         
         if (str[pos] == '{') {
-            // Вложенное множество
             Multiset nested;
             nested.parseFromString(str, pos);
             elements.push_back(std::make_unique<Multiset>(std::move(nested)));
@@ -63,7 +61,6 @@ void Multiset::parseFromString(const std::string& str, size_t& pos) {
             elements.push_back(std::make_unique<SimpleElement>(str[pos]));
             ++pos;
         } else if (str[pos] == '(' && pos + 1 < str.length() && str[pos + 1] == ')') {
-            // Пустое множество
             elements.push_back(std::make_unique<Multiset>());
             pos += 2;
         } else {
@@ -108,7 +105,6 @@ Multiset::Multiset(const std::string& str) {
 
 Multiset::Multiset(const char* str) : Multiset(std::string(str)) {}
 
-// Оператор присваивания
 Multiset& Multiset::operator=(const Multiset& other) {
     if (this != &other) {
         clear();
@@ -119,17 +115,14 @@ Multiset& Multiset::operator=(const Multiset& other) {
     return *this;
 }
 
-// Добавление простого элемента
 void Multiset::addElement(char element) {
     elements.push_back(std::make_unique<SimpleElement>(element));
 }
 
-// Добавление вложенного множества
 void Multiset::addElement(const Multiset& element) {
     elements.push_back(std::make_unique<Multiset>(element));
 }
 
-// Удаление одного вхождения элемента
 void Multiset::removeElement(char element) {
     for (size_t i = 0; i < elements.size(); ++i) {
         if (auto se = dynamic_cast<SimpleElement*>(elements[i].get())) {
@@ -141,7 +134,6 @@ void Multiset::removeElement(char element) {
     }
 }
 
-// Удаление элемента по индексу
 void Multiset::removeElementByIndex(size_t index) {
     if (index < elements.size()) {
         elements.erase(elements.begin() + index);
@@ -156,7 +148,6 @@ bool Multiset::isEmpty() const {
     return elements.empty();
 }
 
-// Проверка принадлежности простого элемента
 bool Multiset::contains(char element) const {
     for (const auto& elem : elements) {
         if (auto se = dynamic_cast<const SimpleElement*>(elem.get())) {
@@ -168,7 +159,6 @@ bool Multiset::contains(char element) const {
     return false;
 }
 
-// Проверка принадлежности вложенного множества
 bool Multiset::contains(const Multiset& element) const {
     for (const auto& elem : elements) {
         if (auto ms = dynamic_cast<const Multiset*>(elem.get())) {
@@ -179,13 +169,11 @@ bool Multiset::contains(const Multiset& element) const {
     }
     return false;
 }
-
-// Мощность 
+ 
 size_t Multiset::cardinality() const {
     return elements.size();
 }
 
-// Рассчет количества вхождений элемента
 size_t Multiset::count(char element) const {
     size_t cnt = 0;
     for (const auto& elem : elements) {
@@ -198,7 +186,6 @@ size_t Multiset::count(char element) const {
     return cnt;
 }
 
-// Оператор равенства
 bool Multiset::operator==(const Multiset& other) const {
     if (elements.size() != other.elements.size()) {
         return false;
@@ -227,7 +214,6 @@ bool Multiset::operator!=(const Multiset& other) const {
     return !(*this == other);
 }
 
-// Объединение множеств
 Multiset Multiset::operator+(const Multiset& other) const {
     Multiset result = *this;
     result += other;
@@ -241,7 +227,6 @@ Multiset& Multiset::operator+=(const Multiset& other) {
     return *this;
 }
 
-// Пересечение множеств
 Multiset Multiset::operator*(const Multiset& other) const {
     
     Multiset result;
