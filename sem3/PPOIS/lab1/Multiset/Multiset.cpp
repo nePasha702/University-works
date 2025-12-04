@@ -6,7 +6,6 @@
 #include <stdexcept>
 #include <functional>
 
-// Класс SimpleElement
 
 SimpleElement::SimpleElement(char val) : value(val) {}
 
@@ -33,7 +32,6 @@ size_t SimpleElement::hash() const {
     return std::hash<char>()(value);
 }
 
-// Класс Multiset
 
 static void skipSpaces(const std::string& str, size_t& pos) {
     while (pos < str.length() && std::isspace(str[pos])) {
@@ -85,14 +83,12 @@ void Multiset::parseFromString(const std::string& str, size_t& pos) {
     ++pos;
 }
 
-// Копирование
 Multiset::Multiset(const Multiset& other) {
     for (const auto& elem : other.elements) {
         elements.push_back(elem->clone());
     }
 }
 
-// Конструктор из строки
 Multiset::Multiset(const std::string& str) {
     size_t pos = 0;
     parseFromString(str, pos);
@@ -113,7 +109,7 @@ Multiset& Multiset::operator=(const Multiset& other) {
         }
     }
     return *this;
-}
+}   
 
 void Multiset::addElement(char element) {
     elements.push_back(std::make_unique<SimpleElement>(element));
@@ -169,7 +165,7 @@ bool Multiset::contains(const Multiset& element) const {
     }
     return false;
 }
- 
+
 size_t Multiset::cardinality() const {
     return elements.size();
 }
@@ -254,7 +250,6 @@ Multiset& Multiset::operator*=(const Multiset& other) {
     return *this;
 }
 
-// Разность множеств
 Multiset Multiset::operator-(const Multiset& other) const {
     Multiset result;
     
@@ -285,7 +280,6 @@ Multiset& Multiset::operator-=(const Multiset& other) {
     return *this;
 }
 
-// Вывод
 void Multiset::print(std::ostream& os) const {
     os << "{";
     for (size_t i = 0; i < elements.size(); ++i) {
@@ -302,7 +296,6 @@ std::ostream& operator<<(std::ostream& os, const Multiset& multiset) {
     return os;
 }
 
-// Ввод 
 std::istream& operator>>(std::istream& is, Multiset& multiset) {
     std::string str;
     std::getline(is, str);
@@ -310,12 +303,10 @@ std::istream& operator>>(std::istream& is, Multiset& multiset) {
     return is;
 }
 
-// Копирование
 std::unique_ptr<MultisetElement> Multiset::clone() const {
     return std::make_unique<Multiset>(*this);
 }
 
-// Сравнение с другим элементом
 bool Multiset::equals(const MultisetElement* other) const {
     if (auto ms = dynamic_cast<const Multiset*>(other)) {
         return *this == *ms;
@@ -323,7 +314,6 @@ bool Multiset::equals(const MultisetElement* other) const {
     return false;
 }
 
-// Хэш-функция
 size_t Multiset::hash() const {
     size_t h = 0;
     for (const auto& elem : elements) {
