@@ -88,7 +88,7 @@ int main() {
         }
     } while (choice != 6);
 
-    std::cout << "Система завершена. Все операции записаны в audit.log\n";
+    std::cout << "Система завершена.\n";
     return 0;
 }
 
