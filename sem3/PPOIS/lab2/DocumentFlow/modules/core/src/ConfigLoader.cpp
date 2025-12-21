@@ -4,7 +4,6 @@ ConfigLoader::ConfigLoader(std::string path)
     : configPath(path), isLoaded(false) {}
 
 bool ConfigLoader::load() {
-    // В реальном проекте здесь парсинг файла
     settings["max_documents"] = "100";
     settings["timeout"] = "30";
     isLoaded = true;
