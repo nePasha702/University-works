@@ -29,18 +29,18 @@ Protocol 3 3 → DocumentBase
 Specification 3 3 → DocumentBase  
 Checklist 3 3 → DocumentBase  
 
-DocumentException 3 2  
-SecurityException 3 2 
-ValidationException 3 2 
-WorkflowException 3 2 
-StorageException 3 2  
-ConfigException 3 2 
-AuditException 3 2  
-SerializerException 3 2 
-DeserializerException 3 2 
-UserException 3 2 
+DocumentException 3 2 
+SecurityException 3 2
+ValidationException 3 2
+WorkflowException 3 2
+StorageException 3 2 
+ConfigException 3 2
+AuditException 3 2 
+SerializerException 3 2
+DeserializerException 3 2
+UserException 3 2
 NetworkException 3 2
-FileException 3 2 
+FileException 3 2
 
 Employee 3 3  
 Manager 3 3 → Employee  
