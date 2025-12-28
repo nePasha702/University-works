@@ -321,6 +321,7 @@ catch (std::exception const & e) {
 
 ### Сборка проекта
 ```
+cd my-ostis-module
 mkdir build && cd build
 cmake ..
 make
@@ -328,8 +329,8 @@ make
 
 ### Запуск тестов
 ```
-cd build
-ctest --output-on-failure
+cd my-ostis-module/build/Release
+./logistics-module-tests
 ```
 
 ### Пример использования
