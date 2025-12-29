@@ -224,12 +224,13 @@ my-ostis-module/
                                     ┌───────────────────┼────────────────────┐
                                     │                   │                    │
                                     ▼                   ▼                    ▼
-                            ┌───────────────┐  ┌──────────────────┐ ┌───────────────┐
-                            │  FileLoader   │  │   DataVerifier   │ │ ShopClustering│
-                            │     Agent     │  │      Agent       │ │     Agent     │
-                            └───────┬───────┘  └────────┬─────────┘ └───────┬───────┘
-                                    │                   │                   │
-                                    └───────────────────┼───────────────────┘
+                          ┌───────────────┐    ┌──────────────────┐    ┌───────────────┐
+                          │               │    │                  │    │               │
+                          │   FileLoader  │ ──▶│   DataVerifier   │ ──▶│ ShopClustering│
+                          │     Agent     │    │      Agent       │    │     Agent     │
+                          └───────────────┘    └──────────────────┘    └───────┬───────┘
+                                                                               │
+                                                        ┌──────────────────────┘
                                                         │
                                                 ┌───────┼───────┐
                                                 ▼       ▼       ▼
@@ -347,7 +348,6 @@ test/
 ├── test_data_validation_agent.cpp    # 2 теста
 ├── test_clustering_agent.cpp         # 3 теста
 ├── test_cost_calculation_agent.cpp   # 1 тест
-├── test_variant_comparison_agent.cpp # 2 теста
 └── test_integration.cpp              # 1 тест
 ```
 
@@ -382,7 +382,6 @@ TEST_F(ClusteringAgentTest, Clustering_K1_K2_K3) {
 | DataVerifierAgent | test_data_validation_agent.cpp | 2 |
 | ShopClusteringAgent | test_clustering_agent.cpp | 3 |
 | CostEstimatorAgent | test_cost_calculation_agent.cpp | 1 |
-| VariantSelectorAgent | test_variant_comparison_agent.cpp | 2 |
 | StorageOptimizationAgent | test_integration.cpp | 1 |
 
 Всего: 6 агентов, 9 тестов
