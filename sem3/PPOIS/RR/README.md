@@ -250,7 +250,7 @@ my-ostis-module/
 
 --- 
 
-## Паплайн обработки
+## Пайплайн обработки
 
 ### Шаг 1: Загрузка файла
 **FileLoaderAgent** читает CSV файл и создаёт структуру торговой сети в SC-памяти.
@@ -343,12 +343,12 @@ test/
 │   ├── shops_3.csv                   # 3 магазина (минимум)
 │   ├── shops_5.csv                   # 5 магазинов
 │   └── shops_15.csv                  # 15 магазинов
-├── test_csv_parser.cpp               # 4 теста
-├── test_data_validation_agent.cpp    # 3 теста
-├── test_clustering_agent.cpp         # 5 тестов
-├── test_cost_calculation_agent.cpp   # 3 теста
+├── test_csv_parser.cpp               # 2 теста
+├── test_data_validation_agent.cpp    # 2 теста
+├── test_clustering_agent.cpp         # 3 теста
+├── test_cost_calculation_agent.cpp   # 1 тест
 ├── test_variant_comparison_agent.cpp # 2 теста
-└── test_integration.cpp              # 2 теста
+└── test_integration.cpp              # 1 тест
 ```
 
 ### Пример теста кластеризации
@@ -378,14 +378,14 @@ TEST_F(ClusteringAgentTest, Clustering_K1_K2_K3) {
 
 | Агент | Тестовый файл | Количество тестов |
 |-------|------------|----------------|
-| FileLoaderAgent | test_csv_parser.cpp | 4 |
-| DataVerifierAgent | test_data_validation_agent.cpp | 3 |
-| ShopClusteringAgent | test_clustering_agent.cpp | 5 |
-| CostEstimatorAgent | test_cost_calculation_agent.cpp | 3 |
+| FileLoaderAgent | test_csv_parser.cpp | 2 |
+| DataVerifierAgent | test_data_validation_agent.cpp | 2 |
+| ShopClusteringAgent | test_clustering_agent.cpp | 3 |
+| CostEstimatorAgent | test_cost_calculation_agent.cpp | 1 |
 | VariantSelectorAgent | test_variant_comparison_agent.cpp | 2 |
-| StorageOptimizationAgent | test_integration.cpp | 2 |
+| StorageOptimizationAgent | test_integration.cpp | 1 |
 
-Всего: 6 агентов, 19 тестов
+Всего: 6 агентов, 9 тестов
 
 ### Обработка ошибок
 Каждый агент реализует многоуровневую обработку ошибок:
