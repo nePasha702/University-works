@@ -110,6 +110,11 @@ class CommandBridge:
         if not destination.strip():
             raise ValidationError("destination", "Пункт назначения не может быть пустым")
         self._current_course = destination.strip()
+    
+    def reset_calibration(self) -> None:
+        """Сброс калибровки и курса после возвращения в порт."""
+        self._is_calibrated = False
+        self._current_course = None
 
 
 class SafetySystem:
