@@ -75,7 +75,11 @@ class Ship:
             "bridge_calibration": self._bridge is not None and self._bridge.is_calibrated
         }
     
-        if all(checks.values()) and self._status in [ShipStatus.EQUIPPING, ShipStatus.UNDER_CONSTRUCTION]:
+        if all(checks.values()) and self._status in [
+            ShipStatus.EQUIPPING, 
+            ShipStatus.UNDER_CONSTRUCTION, 
+            ShipStatus.MAINTENANCE
+        ]:
             self._change_status(ShipStatus.READY_FOR_VOYAGE)
             
         return checks
@@ -96,8 +100,13 @@ class Ship:
         if self._status != ShipStatus.IN_NAVIGATION:
             raise NavigationError("Корабль не может пришвартоваться, так как он не в море")
             
+        if self._bridge:
+            self._bridge.reset_calibration()
+        if self._engine:
+            self._engine.perform_maintenance()
+            
         self._change_status(ShipStatus.MAINTENANCE)
-        print(f"Корабль '{self._name}' зашел в порт на техническое обслуживание.")
+        print(f"Корабль '{self._name}' зашел в порт на ТО. Навигационные системы сброшены.")
 
     def _change_status(self, new_status: ShipStatus) -> None:
         """Внутренний метод для логирования смены состояний (FSM)."""
