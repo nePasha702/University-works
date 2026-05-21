@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tournaments>
+    <tournament>
+        <name>The International 2023</name>
+        <date_held>01.01.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Team Liquid</winner_name>
+        <prize_pool>1900000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>The International 2023</name>
+        <date_held>02.02.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Tundra Esports</winner_name>
+        <prize_pool>4750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>The International 2023</name>
+        <date_held>03.03.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Gaimin Gladiators</winner_name>
+        <prize_pool>17100000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>The International 2023</name>
+        <date_held>04.04.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Team Spirit</winner_name>
+        <prize_pool>1900000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>IEM Katowice 2023</name>
+        <date_held>05.05.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>FaZe Clan</winner_name>
+        <prize_pool>950000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>IEM Katowice 2023</name>
+        <date_held>06.06.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>G2 Esports</winner_name>
+        <prize_pool>237500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>IEM Katowice 2023</name>
+        <date_held>07.07.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Natus Vincere</winner_name>
+        <prize_pool>950000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>IEM Katowice 2023</name>
+        <date_held>08.08.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Team Vitality</winner_name>
+        <prize_pool>237500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>PGL Major 2023</name>
+        <date_held>09.09.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>MOUZ</winner_name>
+        <prize_pool>1187500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>PGL Major 2023</name>
+        <date_held>10.10.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>FaZe Clan</winner_name>
+        <prize_pool>950000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>PGL Major 2023</name>
+        <date_held>11.11.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Virtus.pro</winner_name>
+        <prize_pool>1187500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>PGL Major 2023</name>
+        <date_held>12.12.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Natus Vincere</winner_name>
+        <prize_pool>950000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Worlds Championship 2023</name>
+        <date_held>13.01.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Gen.G</winner_name>
+        <prize_pool>2113750.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Worlds Championship 2023</name>
+        <date_held>14.02.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>EDward Gaming</winner_name>
+        <prize_pool>2375000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Worlds Championship 2023</name>
+        <date_held>15.03.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>DRX</winner_name>
+        <prize_pool>2113750.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Worlds Championship 2023</name>
+        <date_held>16.04.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>T1</winner_name>
+        <prize_pool>2375000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Valorant Champions 2023</name>
+        <date_held>17.05.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Team Heretics</winner_name>
+        <prize_pool>2137500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Valorant Champions 2023</name>
+        <date_held>18.06.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Evil Geniuses</winner_name>
+        <prize_pool>950000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Valorant Champions 2023</name>
+        <date_held>19.07.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Fnatic</winner_name>
+        <prize_pool>2137500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Valorant Champions 2023</name>
+        <date_held>20.08.2023</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Sentinels</winner_name>
+        <prize_pool>950000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Уимблдон 2023</name>
+        <date_held>21.09.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Янник Синнер</winner_name>
+        <prize_pool>42750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Уимблдон 2023</name>
+        <date_held>22.10.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Роджер Федерер</winner_name>
+        <prize_pool>47500000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Уимблдон 2023</name>
+        <date_held>23.11.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Карлос Алькарас</winner_name>
+        <prize_pool>56050000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Уимблдон 2023</name>
+        <date_held>24.12.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Новак Джокович</winner_name>
+        <prize_pool>42750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Ролан Гаррос 2023</name>
+        <date_held>25.01.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Каспер Рууд</winner_name>
+        <prize_pool>40850000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Ролан Гаррос 2023</name>
+        <date_held>26.02.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Карлос Алькарас</winner_name>
+        <prize_pool>46550000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Ролан Гаррос 2023</name>
+        <date_held>27.03.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Новак Джокович</winner_name>
+        <prize_pool>50350000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Ролан Гаррос 2023</name>
+        <date_held>01.04.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Рафаэль Надаль</winner_name>
+        <prize_pool>40850000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>US Open 2023</name>
+        <date_held>02.05.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Янник Синнер</winner_name>
+        <prize_pool>57000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>US Open 2023</name>
+        <date_held>03.06.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Новак Джокович</winner_name>
+        <prize_pool>61750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>US Open 2023</name>
+        <date_held>04.07.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Карлос Алькарас</winner_name>
+        <prize_pool>57000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>US Open 2023</name>
+        <date_held>05.08.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Даниил Медведев</winner_name>
+        <prize_pool>61750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Australian Open 2023</name>
+        <date_held>06.09.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Даниил Медведев</winner_name>
+        <prize_pool>52250000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Australian Open 2023</name>
+        <date_held>07.10.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Янник Синнер</winner_name>
+        <prize_pool>54150000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Australian Open 2023</name>
+        <date_held>08.11.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Рафаэль Надаль</winner_name>
+        <prize_pool>52250000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Australian Open 2023</name>
+        <date_held>09.12.2023</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Новак Джокович</winner_name>
+        <prize_pool>54150000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Чемпионов УЕФА 2023</name>
+        <date_held>10.01.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Бавария</winner_name>
+        <prize_pool>80750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Чемпионов УЕФА 2023</name>
+        <date_held>11.02.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Челси</winner_name>
+        <prize_pool>76000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Чемпионов УЕФА 2023</name>
+        <date_held>12.03.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Манчестер Сити</winner_name>
+        <prize_pool>85500000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Чемпионов УЕФА 2023</name>
+        <date_held>13.04.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Реал Мадрид</winner_name>
+        <prize_pool>80750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Европы УЕФА 2023</name>
+        <date_held>14.05.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Вильярреал</winner_name>
+        <prize_pool>23750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Европы УЕФА 2023</name>
+        <date_held>15.06.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Айнтрахт</winner_name>
+        <prize_pool>21850000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Европы УЕФА 2023</name>
+        <date_held>16.07.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Севилья</winner_name>
+        <prize_pool>23750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Европы УЕФА 2023</name>
+        <date_held>17.08.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Аталанта</winner_name>
+        <prize_pool>21850000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок Англии 2023</name>
+        <date_held>18.09.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Арсенал</winner_name>
+        <prize_pool>42750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок Англии 2023</name>
+        <date_held>19.10.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Ливерпуль</winner_name>
+        <prize_pool>3800000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок Англии 2023</name>
+        <date_held>20.11.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Манчестер Сити</winner_name>
+        <prize_pool>42750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок Англии 2023</name>
+        <date_held>21.12.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Манчестер Юнайтед</winner_name>
+        <prize_pool>3800000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Суперкубок УЕФА 2023</name>
+        <date_held>22.01.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Бавария</winner_name>
+        <prize_pool>4750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Суперкубок УЕФА 2023</name>
+        <date_held>23.02.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Челси</winner_name>
+        <prize_pool>4275000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Суперкубок УЕФА 2023</name>
+        <date_held>24.03.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Манчестер Сити</winner_name>
+        <prize_pool>4750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Суперкубок УЕФА 2023</name>
+        <date_held>25.04.2023</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Реал Мадрид</winner_name>
+        <prize_pool>4275000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок мира ФИДЕ 2023</name>
+        <date_held>26.05.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Фабиано Каруана</winner_name>
+        <prize_pool>1710000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок мира ФИДЕ 2023</name>
+        <date_held>27.06.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Рамешбабу Прагнанандха</winner_name>
+        <prize_pool>1900000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок мира ФИДЕ 2023</name>
+        <date_held>01.07.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Ян Непомнящий</winner_name>
+        <prize_pool>1710000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок мира ФИДЕ 2023</name>
+        <date_held>02.08.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Магнус Карлсен</winner_name>
+        <prize_pool>1900000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Турнир претендентов 2023</name>
+        <date_held>03.09.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Хикару Накамура</winner_name>
+        <prize_pool>475000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Турнир претендентов 2023</name>
+        <date_held>04.10.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Фабиано Каруана</winner_name>
+        <prize_pool>570000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Турнир претендентов 2023</name>
+        <date_held>05.11.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Ян Непомнящий</winner_name>
+        <prize_pool>475000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Турнир претендентов 2023</name>
+        <date_held>06.12.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Доммараджу Гукеш</winner_name>
+        <prize_pool>570000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Tata Steel Chess 2023</name>
+        <date_held>07.01.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Йорден ван Форест</winner_name>
+        <prize_pool>285000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Tata Steel Chess 2023</name>
+        <date_held>08.02.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Магнус Карлсен</winner_name>
+        <prize_pool>332500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Tata Steel Chess 2023</name>
+        <date_held>09.03.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Аниш Гири</winner_name>
+        <prize_pool>285000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Tata Steel Chess 2023</name>
+        <date_held>10.04.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Вэй И</winner_name>
+        <prize_pool>332500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Norway Chess 2023</name>
+        <date_held>11.05.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Алиреза Фирузджа</winner_name>
+        <prize_pool>142500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Norway Chess 2023</name>
+        <date_held>12.06.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Хикару Накамура</winner_name>
+        <prize_pool>190000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Norway Chess 2023</name>
+        <date_held>13.07.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Фабиано Каруана</winner_name>
+        <prize_pool>142500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Norway Chess 2023</name>
+        <date_held>14.08.2023</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Магнус Карлсен</winner_name>
+        <prize_pool>190000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат мира 2023</name>
+        <date_held>15.09.2023</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Марк Селби</winner_name>
+        <prize_pool>2375000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат мира 2023</name>
+        <date_held>16.10.2023</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Ронни О'Салливан</winner_name>
+        <prize_pool>2275250.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат мира 2023</name>
+        <date_held>17.11.2023</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Люка Бресель</winner_name>
+        <prize_pool>2375000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат мира 2023</name>
+        <date_held>18.12.2023</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Кайрен Уилсон</winner_name>
+        <prize_pool>2275250.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Мастерс 2023</name>
+        <date_held>19.01.2023</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Марк Аллен</winner_name>
+        <prize_pool>760000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Мастерс 2023</name>
+        <date_held>20.02.2023</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Нил Робертсон</winner_name>
+        <prize_pool>688750.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Мастерс 2023</name>
+        <date_held>21.03.2023</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Джадд Трамп</winner_name>
+        <prize_pool>760000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Мастерс 2023</name>
+        <date_held>22.04.2023</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Ронни О'Салливан</winner_name>
+        <prize_pool>688750.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат Великобритании 2023</name>
+        <date_held>23.05.2023</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Нил Робертсон</winner_name>
+        <prize_pool>1140000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат Великобритании 2023</name>
+        <date_held>24.06.2023</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Чжао Синьтун</winner_name>
+        <prize_pool>950000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат Великобритании 2023</name>
+        <date_held>25.07.2023</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Марк Аллен</winner_name>
+        <prize_pool>1140000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат Великобритании 2023</name>
+        <date_held>26.08.2023</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Ронни О'Салливан</winner_name>
+        <prize_pool>950000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монако 2023</name>
+        <date_held>27.09.2023</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Шарль Леклер</winner_name>
+        <prize_pool>475000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монако 2023</name>
+        <date_held>01.10.2023</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Льюис Хэмилтон</winner_name>
+        <prize_pool>570000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монако 2023</name>
+        <date_held>02.11.2023</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Серхио Перес</winner_name>
+        <prize_pool>475000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монако 2023</name>
+        <date_held>03.12.2023</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Макс Ферстаппен</winner_name>
+        <prize_pool>570000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Сильверстоун 2023</name>
+        <date_held>04.01.2023</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Ландо Норрис</winner_name>
+        <prize_pool>427500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Сильверстоун 2023</name>
+        <date_held>05.02.2023</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Карлос Сайнс</winner_name>
+        <prize_pool>522500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Сильверстоун 2023</name>
+        <date_held>06.03.2023</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Макс Ферстаппен</winner_name>
+        <prize_pool>427500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Сильверстоун 2023</name>
+        <date_held>07.04.2023</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Льюис Хэмилтон</winner_name>
+        <prize_pool>522500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монцы 2023</name>
+        <date_held>08.05.2023</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Даниэль Риккардо</winner_name>
+        <prize_pool>380000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монцы 2023</name>
+        <date_held>09.06.2023</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Пьер Гасли</winner_name>
+        <prize_pool>475000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монцы 2023</name>
+        <date_held>10.07.2023</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Макс Ферстаппен</winner_name>
+        <prize_pool>380000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монцы 2023</name>
+        <date_held>11.08.2023</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Шарль Леклер</winner_name>
+        <prize_pool>475000.0</prize_pool>
+    </tournament>
+</tournaments>

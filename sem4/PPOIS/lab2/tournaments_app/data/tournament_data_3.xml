@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tournaments>
+    <tournament>
+        <name>Grand Absolute The International</name>
+        <date_held>06.03.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Team Spirit</winner_name>
+        <prize_pool>2200000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute The International</name>
+        <date_held>07.04.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Gaimin Gladiators</winner_name>
+        <prize_pool>5500000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute The International</name>
+        <date_held>08.05.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Tundra Esports</winner_name>
+        <prize_pool>19800000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute The International</name>
+        <date_held>09.06.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Team Liquid</winner_name>
+        <prize_pool>2200000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute IEM Katowice</name>
+        <date_held>10.07.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Team Vitality</winner_name>
+        <prize_pool>1100000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute IEM Katowice</name>
+        <date_held>11.08.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Natus Vincere</winner_name>
+        <prize_pool>275000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute IEM Katowice</name>
+        <date_held>12.09.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>G2 Esports</winner_name>
+        <prize_pool>1100000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute IEM Katowice</name>
+        <date_held>13.10.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>FaZe Clan</winner_name>
+        <prize_pool>275000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute PGL Major</name>
+        <date_held>14.11.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Natus Vincere</winner_name>
+        <prize_pool>1375000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute PGL Major</name>
+        <date_held>15.12.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Virtus.pro</winner_name>
+        <prize_pool>1100000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute PGL Major</name>
+        <date_held>16.01.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>FaZe Clan</winner_name>
+        <prize_pool>1375000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute PGL Major</name>
+        <date_held>17.02.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>MOUZ</winner_name>
+        <prize_pool>1100000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Worlds Championship</name>
+        <date_held>18.03.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>T1</winner_name>
+        <prize_pool>2447500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Worlds Championship</name>
+        <date_held>19.04.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>DRX</winner_name>
+        <prize_pool>2750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Worlds Championship</name>
+        <date_held>20.05.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>EDward Gaming</winner_name>
+        <prize_pool>2447500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Worlds Championship</name>
+        <date_held>21.06.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Gen.G</winner_name>
+        <prize_pool>2750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Valorant Champions</name>
+        <date_held>22.07.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Sentinels</winner_name>
+        <prize_pool>2475000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Valorant Champions</name>
+        <date_held>23.08.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Fnatic</winner_name>
+        <prize_pool>1100000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Valorant Champions</name>
+        <date_held>24.09.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Evil Geniuses</winner_name>
+        <prize_pool>2475000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Valorant Champions</name>
+        <date_held>25.10.2022</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Team Heretics</winner_name>
+        <prize_pool>1100000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Уимблдон</name>
+        <date_held>26.11.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Новак Джокович</winner_name>
+        <prize_pool>49500000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Уимблдон</name>
+        <date_held>27.12.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Карлос Алькарас</winner_name>
+        <prize_pool>55000000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Уимблдон</name>
+        <date_held>01.01.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Роджер Федерер</winner_name>
+        <prize_pool>64900000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Уимблдон</name>
+        <date_held>02.02.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Янник Синнер</winner_name>
+        <prize_pool>49500000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Ролан Гаррос</name>
+        <date_held>03.03.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Рафаэль Надаль</winner_name>
+        <prize_pool>47300000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Ролан Гаррос</name>
+        <date_held>04.04.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Новак Джокович</winner_name>
+        <prize_pool>53900000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Ролан Гаррос</name>
+        <date_held>05.05.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Карлос Алькарас</winner_name>
+        <prize_pool>58300000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Ролан Гаррос</name>
+        <date_held>06.06.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Каспер Рууд</winner_name>
+        <prize_pool>47300000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute US Open</name>
+        <date_held>07.07.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Даниил Медведев</winner_name>
+        <prize_pool>66000000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute US Open</name>
+        <date_held>08.08.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Карлос Алькарас</winner_name>
+        <prize_pool>71500000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute US Open</name>
+        <date_held>09.09.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Новак Джокович</winner_name>
+        <prize_pool>66000000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute US Open</name>
+        <date_held>10.10.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Янник Синнер</winner_name>
+        <prize_pool>71500000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Australian Open</name>
+        <date_held>11.11.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Новак Джокович</winner_name>
+        <prize_pool>60500000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Australian Open</name>
+        <date_held>12.12.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Рафаэль Надаль</winner_name>
+        <prize_pool>62700000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Australian Open</name>
+        <date_held>13.01.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Янник Синнер</winner_name>
+        <prize_pool>60500000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Australian Open</name>
+        <date_held>14.02.2022</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Даниил Медведев</winner_name>
+        <prize_pool>62700000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Лига Чемпионов УЕФА</name>
+        <date_held>15.03.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Реал Мадрид</winner_name>
+        <prize_pool>93500000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Лига Чемпионов УЕФА</name>
+        <date_held>16.04.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Манчестер Сити</winner_name>
+        <prize_pool>88000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Лига Чемпионов УЕФА</name>
+        <date_held>17.05.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Челси</winner_name>
+        <prize_pool>99000000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Лига Чемпионов УЕФА</name>
+        <date_held>18.06.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Бавария</winner_name>
+        <prize_pool>93500000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Лига Европы УЕФА</name>
+        <date_held>19.07.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Аталанта</winner_name>
+        <prize_pool>27500000.000000004</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Лига Европы УЕФА</name>
+        <date_held>20.08.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Севилья</winner_name>
+        <prize_pool>25300000.000000004</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Лига Европы УЕФА</name>
+        <date_held>21.09.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Айнтрахт</winner_name>
+        <prize_pool>27500000.000000004</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Лига Европы УЕФА</name>
+        <date_held>22.10.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Вильярреал</winner_name>
+        <prize_pool>25300000.000000004</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Кубок Англии</name>
+        <date_held>23.11.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Манчестер Юнайтед</winner_name>
+        <prize_pool>49500000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Кубок Англии</name>
+        <date_held>24.12.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Манчестер Сити</winner_name>
+        <prize_pool>4400000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Кубок Англии</name>
+        <date_held>25.01.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Ливерпуль</winner_name>
+        <prize_pool>49500000.00000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Кубок Англии</name>
+        <date_held>26.02.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Арсенал</winner_name>
+        <prize_pool>4400000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Суперкубок УЕФА</name>
+        <date_held>27.03.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Реал Мадрид</winner_name>
+        <prize_pool>5500000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Суперкубок УЕФА</name>
+        <date_held>01.04.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Манчестер Сити</winner_name>
+        <prize_pool>4950000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Суперкубок УЕФА</name>
+        <date_held>02.05.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Челси</winner_name>
+        <prize_pool>5500000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Суперкубок УЕФА</name>
+        <date_held>03.06.2022</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Бавария</winner_name>
+        <prize_pool>4950000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Кубок мира ФИДЕ</name>
+        <date_held>04.07.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Магнус Карлсен</winner_name>
+        <prize_pool>1980000.0000000002</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Кубок мира ФИДЕ</name>
+        <date_held>05.08.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Ян Непомнящий</winner_name>
+        <prize_pool>2200000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Кубок мира ФИДЕ</name>
+        <date_held>06.09.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Рамешбабу Прагнанандха</winner_name>
+        <prize_pool>1980000.0000000002</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Кубок мира ФИДЕ</name>
+        <date_held>07.10.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Фабиано Каруана</winner_name>
+        <prize_pool>2200000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Турнир претендентов</name>
+        <date_held>08.11.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Доммараджу Гукеш</winner_name>
+        <prize_pool>550000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Турнир претендентов</name>
+        <date_held>09.12.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Ян Непомнящий</winner_name>
+        <prize_pool>660000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Турнир претендентов</name>
+        <date_held>10.01.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Фабиано Каруана</winner_name>
+        <prize_pool>550000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Турнир претендентов</name>
+        <date_held>11.02.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Хикару Накамура</winner_name>
+        <prize_pool>660000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Tata Steel Chess</name>
+        <date_held>12.03.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Вэй И</winner_name>
+        <prize_pool>330000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Tata Steel Chess</name>
+        <date_held>13.04.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Аниш Гири</winner_name>
+        <prize_pool>385000.00000000006</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Tata Steel Chess</name>
+        <date_held>14.05.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Магнус Карлсен</winner_name>
+        <prize_pool>330000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Tata Steel Chess</name>
+        <date_held>15.06.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Йорден ван Форест</winner_name>
+        <prize_pool>385000.00000000006</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Norway Chess</name>
+        <date_held>16.07.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Магнус Карлсен</winner_name>
+        <prize_pool>165000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Norway Chess</name>
+        <date_held>17.08.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Фабиано Каруана</winner_name>
+        <prize_pool>220000.00000000003</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Norway Chess</name>
+        <date_held>18.09.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Хикару Накамура</winner_name>
+        <prize_pool>165000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Norway Chess</name>
+        <date_held>19.10.2022</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Алиреза Фирузджа</winner_name>
+        <prize_pool>220000.00000000003</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Чемпионат мира</name>
+        <date_held>20.11.2022</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Кайрен Уилсон</winner_name>
+        <prize_pool>2750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Чемпионат мира</name>
+        <date_held>21.12.2022</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Люка Бресель</winner_name>
+        <prize_pool>2634500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Чемпионат мира</name>
+        <date_held>22.01.2022</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Ронни О'Салливан</winner_name>
+        <prize_pool>2750000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Чемпионат мира</name>
+        <date_held>23.02.2022</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Марк Селби</winner_name>
+        <prize_pool>2634500.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Мастерс</name>
+        <date_held>24.03.2022</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Ронни О'Салливан</winner_name>
+        <prize_pool>880000.0000000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Мастерс</name>
+        <date_held>25.04.2022</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Джадд Трамп</winner_name>
+        <prize_pool>797500.0000000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Мастерс</name>
+        <date_held>26.05.2022</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Нил Робертсон</winner_name>
+        <prize_pool>880000.0000000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Мастерс</name>
+        <date_held>27.06.2022</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Марк Аллен</winner_name>
+        <prize_pool>797500.0000000001</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Чемпионат Великобритании</name>
+        <date_held>01.07.2022</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Ронни О'Салливан</winner_name>
+        <prize_pool>1320000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Чемпионат Великобритании</name>
+        <date_held>02.08.2022</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Марк Аллен</winner_name>
+        <prize_pool>1100000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Чемпионат Великобритании</name>
+        <date_held>03.09.2022</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Чжао Синьтун</winner_name>
+        <prize_pool>1320000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Чемпионат Великобритании</name>
+        <date_held>04.10.2022</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Нил Робертсон</winner_name>
+        <prize_pool>1100000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Гран-при Монако</name>
+        <date_held>05.11.2022</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Макс Ферстаппен</winner_name>
+        <prize_pool>550000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Гран-при Монако</name>
+        <date_held>06.12.2022</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Серхио Перес</winner_name>
+        <prize_pool>660000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Гран-при Монако</name>
+        <date_held>07.01.2022</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Льюис Хэмилтон</winner_name>
+        <prize_pool>550000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Гран-при Монако</name>
+        <date_held>08.02.2022</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Шарль Леклер</winner_name>
+        <prize_pool>660000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Гран-при Сильверстоун</name>
+        <date_held>09.03.2022</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Льюис Хэмилтон</winner_name>
+        <prize_pool>495000.00000000006</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Гран-при Сильверстоун</name>
+        <date_held>10.04.2022</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Макс Ферстаппен</winner_name>
+        <prize_pool>605000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Гран-при Сильверстоун</name>
+        <date_held>11.05.2022</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Карлос Сайнс</winner_name>
+        <prize_pool>495000.00000000006</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Гран-при Сильверстоун</name>
+        <date_held>12.06.2022</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Ландо Норрис</winner_name>
+        <prize_pool>605000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Гран-при Монцы</name>
+        <date_held>13.07.2022</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Шарль Леклер</winner_name>
+        <prize_pool>440000.00000000006</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Гран-при Монцы</name>
+        <date_held>14.08.2022</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Макс Ферстаппен</winner_name>
+        <prize_pool>550000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Гран-при Монцы</name>
+        <date_held>15.09.2022</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Пьер Гасли</winner_name>
+        <prize_pool>440000.00000000006</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Grand Absolute Гран-при Монцы</name>
+        <date_held>16.10.2022</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Даниэль Риккардо</winner_name>
+        <prize_pool>550000.0</prize_pool>
+    </tournament>
+</tournaments>

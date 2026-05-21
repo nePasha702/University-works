@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tournaments>
+    <tournament>
+        <name>The International [Asia Pro]</name>
+        <date_held>01.01.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Team Spirit</winner_name>
+        <prize_pool>2400000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>The International [America Open]</name>
+        <date_held>02.02.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Gaimin Gladiators</winner_name>
+        <prize_pool>6000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>The International [Saudi Invitational]</name>
+        <date_held>03.03.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Tundra Esports</winner_name>
+        <prize_pool>21600000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>The International [China Masters]</name>
+        <date_held>04.04.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Team Liquid</winner_name>
+        <prize_pool>2400000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>IEM Katowice [Asia Pro]</name>
+        <date_held>05.05.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Team Vitality</winner_name>
+        <prize_pool>1200000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>IEM Katowice [America Open]</name>
+        <date_held>06.06.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Natus Vincere</winner_name>
+        <prize_pool>300000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>IEM Katowice [Saudi Invitational]</name>
+        <date_held>07.07.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>G2 Esports</winner_name>
+        <prize_pool>1200000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>IEM Katowice [China Masters]</name>
+        <date_held>08.08.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>FaZe Clan</winner_name>
+        <prize_pool>300000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>PGL Major [Asia Pro]</name>
+        <date_held>09.09.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Natus Vincere</winner_name>
+        <prize_pool>1500000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>PGL Major [America Open]</name>
+        <date_held>10.10.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Virtus.pro</winner_name>
+        <prize_pool>1200000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>PGL Major [Saudi Invitational]</name>
+        <date_held>11.11.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>FaZe Clan</winner_name>
+        <prize_pool>1500000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>PGL Major [China Masters]</name>
+        <date_held>12.12.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>MOUZ</winner_name>
+        <prize_pool>1200000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Worlds Championship [Asia Pro]</name>
+        <date_held>13.01.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>T1</winner_name>
+        <prize_pool>2670000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Worlds Championship [America Open]</name>
+        <date_held>14.02.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>DRX</winner_name>
+        <prize_pool>3000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Worlds Championship [Saudi Invitational]</name>
+        <date_held>15.03.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>EDward Gaming</winner_name>
+        <prize_pool>2670000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Worlds Championship [China Masters]</name>
+        <date_held>16.04.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Gen.G</winner_name>
+        <prize_pool>3000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Valorant Champions [Asia Pro]</name>
+        <date_held>17.05.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Sentinels</winner_name>
+        <prize_pool>2700000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Valorant Champions [America Open]</name>
+        <date_held>18.06.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Fnatic</winner_name>
+        <prize_pool>1200000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Valorant Champions [Saudi Invitational]</name>
+        <date_held>19.07.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Evil Geniuses</winner_name>
+        <prize_pool>2700000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Valorant Champions [China Masters]</name>
+        <date_held>20.08.2025</date_held>
+        <sport_type>Киберспорт</sport_type>
+        <winner_name>Team Heretics</winner_name>
+        <prize_pool>1200000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Уимблдон [Asia Pro]</name>
+        <date_held>21.09.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Новак Джокович</winner_name>
+        <prize_pool>54000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Уимблдон [America Open]</name>
+        <date_held>22.10.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Карлос Алькарас</winner_name>
+        <prize_pool>60000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Уимблдон [Saudi Invitational]</name>
+        <date_held>23.11.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Роджер Федерер</winner_name>
+        <prize_pool>70800000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Уимблдон [China Masters]</name>
+        <date_held>24.12.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Янник Синнер</winner_name>
+        <prize_pool>54000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Ролан Гаррос [Asia Pro]</name>
+        <date_held>25.01.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Рафаэль Надаль</winner_name>
+        <prize_pool>51600000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Ролан Гаррос [America Open]</name>
+        <date_held>26.02.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Новак Джокович</winner_name>
+        <prize_pool>58800000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Ролан Гаррос [Saudi Invitational]</name>
+        <date_held>27.03.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Карлос Алькарас</winner_name>
+        <prize_pool>63600000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Ролан Гаррос [China Masters]</name>
+        <date_held>01.04.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Каспер Рууд</winner_name>
+        <prize_pool>51600000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>US Open [Asia Pro]</name>
+        <date_held>02.05.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Даниил Медведев</winner_name>
+        <prize_pool>72000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>US Open [America Open]</name>
+        <date_held>03.06.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Карлос Алькарас</winner_name>
+        <prize_pool>78000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>US Open [Saudi Invitational]</name>
+        <date_held>04.07.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Новак Джокович</winner_name>
+        <prize_pool>72000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>US Open [China Masters]</name>
+        <date_held>05.08.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Янник Синнер</winner_name>
+        <prize_pool>78000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Australian Open [Asia Pro]</name>
+        <date_held>06.09.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Новак Джокович</winner_name>
+        <prize_pool>66000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Australian Open [America Open]</name>
+        <date_held>07.10.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Рафаэль Надаль</winner_name>
+        <prize_pool>68400000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Australian Open [Saudi Invitational]</name>
+        <date_held>08.11.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Янник Синнер</winner_name>
+        <prize_pool>66000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Australian Open [China Masters]</name>
+        <date_held>09.12.2025</date_held>
+        <sport_type>Теннис</sport_type>
+        <winner_name>Даниил Медведев</winner_name>
+        <prize_pool>68400000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Чемпионов УЕФА [Asia Pro]</name>
+        <date_held>10.01.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Реал Мадрид</winner_name>
+        <prize_pool>102000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Чемпионов УЕФА [America Open]</name>
+        <date_held>11.02.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Манчестер Сити</winner_name>
+        <prize_pool>96000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Чемпионов УЕФА [Saudi Invitational]</name>
+        <date_held>12.03.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Челси</winner_name>
+        <prize_pool>108000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Чемпионов УЕФА [China Masters]</name>
+        <date_held>13.04.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Бавария</winner_name>
+        <prize_pool>102000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Европы УЕФА [Asia Pro]</name>
+        <date_held>14.05.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Аталанта</winner_name>
+        <prize_pool>30000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Европы УЕФА [America Open]</name>
+        <date_held>15.06.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Севилья</winner_name>
+        <prize_pool>27600000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Европы УЕФА [Saudi Invitational]</name>
+        <date_held>16.07.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Айнтрахт</winner_name>
+        <prize_pool>30000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Лига Европы УЕФА [China Masters]</name>
+        <date_held>17.08.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Вильярреал</winner_name>
+        <prize_pool>27600000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок Англии [Asia Pro]</name>
+        <date_held>18.09.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Манчестер Юнайтед</winner_name>
+        <prize_pool>54000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок Англии [America Open]</name>
+        <date_held>19.10.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Манчестер Сити</winner_name>
+        <prize_pool>4800000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок Англии [Saudi Invitational]</name>
+        <date_held>20.11.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Ливерпуль</winner_name>
+        <prize_pool>54000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок Англии [China Masters]</name>
+        <date_held>21.12.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Арсенал</winner_name>
+        <prize_pool>4800000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Суперкубок УЕФА [Asia Pro]</name>
+        <date_held>22.01.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Реал Мадрид</winner_name>
+        <prize_pool>6000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Суперкубок УЕФА [America Open]</name>
+        <date_held>23.02.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Манчестер Сити</winner_name>
+        <prize_pool>5400000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Суперкубок УЕФА [Saudi Invitational]</name>
+        <date_held>24.03.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Челси</winner_name>
+        <prize_pool>6000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Суперкубок УЕФА [China Masters]</name>
+        <date_held>25.04.2025</date_held>
+        <sport_type>Футбол</sport_type>
+        <winner_name>Бавария</winner_name>
+        <prize_pool>5400000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок мира ФИДЕ [Asia Pro]</name>
+        <date_held>26.05.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Магнус Карлсен</winner_name>
+        <prize_pool>2160000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок мира ФИДЕ [America Open]</name>
+        <date_held>27.06.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Ян Непомнящий</winner_name>
+        <prize_pool>2400000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок мира ФИДЕ [Saudi Invitational]</name>
+        <date_held>01.07.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Рамешбабу Прагнанандха</winner_name>
+        <prize_pool>2160000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Кубок мира ФИДЕ [China Masters]</name>
+        <date_held>02.08.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Фабиано Каруана</winner_name>
+        <prize_pool>2400000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Турнир претендентов [Asia Pro]</name>
+        <date_held>03.09.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Доммараджу Гукеш</winner_name>
+        <prize_pool>600000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Турнир претендентов [America Open]</name>
+        <date_held>04.10.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Ян Непомнящий</winner_name>
+        <prize_pool>720000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Турнир претендентов [Saudi Invitational]</name>
+        <date_held>05.11.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Фабиано Каруана</winner_name>
+        <prize_pool>600000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Турнир претендентов [China Masters]</name>
+        <date_held>06.12.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Хикару Накамура</winner_name>
+        <prize_pool>720000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Tata Steel Chess [Asia Pro]</name>
+        <date_held>07.01.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Вэй И</winner_name>
+        <prize_pool>360000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Tata Steel Chess [America Open]</name>
+        <date_held>08.02.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Аниш Гири</winner_name>
+        <prize_pool>420000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Tata Steel Chess [Saudi Invitational]</name>
+        <date_held>09.03.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Магнус Карлсен</winner_name>
+        <prize_pool>360000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Tata Steel Chess [China Masters]</name>
+        <date_held>10.04.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Йорден ван Форест</winner_name>
+        <prize_pool>420000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Norway Chess [Asia Pro]</name>
+        <date_held>11.05.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Магнус Карлсен</winner_name>
+        <prize_pool>180000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Norway Chess [America Open]</name>
+        <date_held>12.06.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Фабиано Каруана</winner_name>
+        <prize_pool>240000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Norway Chess [Saudi Invitational]</name>
+        <date_held>13.07.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Хикару Накамура</winner_name>
+        <prize_pool>180000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Norway Chess [China Masters]</name>
+        <date_held>14.08.2025</date_held>
+        <sport_type>Шахматы</sport_type>
+        <winner_name>Алиреза Фирузджа</winner_name>
+        <prize_pool>240000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат мира [Asia Pro]</name>
+        <date_held>15.09.2025</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Кайрен Уилсон</winner_name>
+        <prize_pool>3000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат мира [America Open]</name>
+        <date_held>16.10.2025</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Люка Бресель</winner_name>
+        <prize_pool>2874000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат мира [Saudi Invitational]</name>
+        <date_held>17.11.2025</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Ронни О'Салливан</winner_name>
+        <prize_pool>3000000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат мира [China Masters]</name>
+        <date_held>18.12.2025</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Марк Селби</winner_name>
+        <prize_pool>2874000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Мастерс [Asia Pro]</name>
+        <date_held>19.01.2025</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Ронни О'Салливан</winner_name>
+        <prize_pool>960000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Мастерс [America Open]</name>
+        <date_held>20.02.2025</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Джадд Трамп</winner_name>
+        <prize_pool>870000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Мастерс [Saudi Invitational]</name>
+        <date_held>21.03.2025</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Нил Робертсон</winner_name>
+        <prize_pool>960000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Мастерс [China Masters]</name>
+        <date_held>22.04.2025</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Марк Аллен</winner_name>
+        <prize_pool>870000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат Великобритании [Asia Pro]</name>
+        <date_held>23.05.2025</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Ронни О'Салливан</winner_name>
+        <prize_pool>1440000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат Великобритании [America Open]</name>
+        <date_held>24.06.2025</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Марк Аллен</winner_name>
+        <prize_pool>1200000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат Великобритании [Saudi Invitational]</name>
+        <date_held>25.07.2025</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Чжао Синьтун</winner_name>
+        <prize_pool>1440000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Чемпионат Великобритании [China Masters]</name>
+        <date_held>26.08.2025</date_held>
+        <sport_type>Снукер</sport_type>
+        <winner_name>Нил Робертсон</winner_name>
+        <prize_pool>1200000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монако [Asia Pro]</name>
+        <date_held>27.09.2025</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Макс Ферстаппен</winner_name>
+        <prize_pool>600000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монако [America Open]</name>
+        <date_held>01.10.2025</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Серхио Перес</winner_name>
+        <prize_pool>720000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монако [Saudi Invitational]</name>
+        <date_held>02.11.2025</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Льюис Хэмилтон</winner_name>
+        <prize_pool>600000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монако [China Masters]</name>
+        <date_held>03.12.2025</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Шарль Леклер</winner_name>
+        <prize_pool>720000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Сильверстоун [Asia Pro]</name>
+        <date_held>04.01.2025</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Льюис Хэмилтон</winner_name>
+        <prize_pool>540000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Сильверстоун [America Open]</name>
+        <date_held>05.02.2025</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Макс Ферстаппен</winner_name>
+        <prize_pool>660000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Сильверстоун [Saudi Invitational]</name>
+        <date_held>06.03.2025</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Карлос Сайнс</winner_name>
+        <prize_pool>540000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Сильверстоун [China Masters]</name>
+        <date_held>07.04.2025</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Ландо Норрис</winner_name>
+        <prize_pool>660000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монцы [Asia Pro]</name>
+        <date_held>08.05.2025</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Шарль Леклер</winner_name>
+        <prize_pool>480000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монцы [America Open]</name>
+        <date_held>09.06.2025</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Макс Ферстаппен</winner_name>
+        <prize_pool>600000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монцы [Saudi Invitational]</name>
+        <date_held>10.07.2025</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Пьер Гасли</winner_name>
+        <prize_pool>480000.0</prize_pool>
+    </tournament>
+    <tournament>
+        <name>Гран-при Монцы [China Masters]</name>
+        <date_held>11.08.2025</date_held>
+        <sport_type>Формула-1</sport_type>
+        <winner_name>Даниэль Риккардо</winner_name>
+        <prize_pool>600000.0</prize_pool>
+    </tournament>
+</tournaments>
