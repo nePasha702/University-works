@@ -18,13 +18,11 @@ class TournamentSAXHandler(xml.sax.ContentHandler):
 
     def characters(self, content):
         """Читает текстовое содержимое внутри тегов."""
-        # Метод может вызываться частями, поэтому аккуратно склеиваем строку
         self.current_value += content
 
     def endElement(self, tag):
         """Вызывается при закрытии тега (например, </name>)."""
         if tag == "tournament":
-            # Когда тег записи закрывается, создаем объект и добавляем в Модель
             try:
                 record = TournamentRecord(
                     tournament_name=self.record_data.get("name", ""),
@@ -35,11 +33,10 @@ class TournamentSAXHandler(xml.sax.ContentHandler):
                 )
                 self.model.add_record(record)
             except ValueError:
-                pass  # Пропускаем запись, если данные некорректны
-            self.record_data = {}  # Очищаем словарь для следующего турнира
+                pass 
+            self.record_data = {} 
             
         elif tag in ["name", "date_held", "sport_type", "winner_name", "prize_pool"]:
-            # Сохраняем значение конкретного поля, убирая лишние пробелы по краям
             self.record_data[tag] = self.current_value.strip()
             
         self.current_element = ""
@@ -55,7 +52,7 @@ class XMLManager:
         parser = xml.sax.make_parser()
         parser.setContentHandler(handler)
         
-        model.clear_records()  # Обязательно очищаем текущую базу перед загрузкой нового файла
+        model.clear_records()
         parser.parse(filepath)
 
     @staticmethod
@@ -69,7 +66,6 @@ class XMLManager:
             tournament_elem = doc.createElement("tournament")
             root.appendChild(tournament_elem)
 
-            # Вспомогательная локальная функция для создания текстовых узлов без дублирования кода
             def add_element(name, text):
                 elem = doc.createElement(name)
                 text_node = doc.createTextNode(str(text))
@@ -82,9 +78,5 @@ class XMLManager:
             add_element("winner_name", record.winner_name)
             add_element("prize_pool", record.prize_pool)
             
-            # Важно: Вычисляемое поле (заработок победителя) мы не сохраняем в XML. 
-            # Оно будет автоматически пересчитано нашей Моделью (model.py) при загрузке из файла.
-
-        # Записываем сформированное DOM-дерево в файл с красивыми отступами и кодировкой UTF-8
         with open(filepath, "w", encoding="utf-8") as f:
             doc.writexml(f, indent="", addindent="    ", newl="\n")

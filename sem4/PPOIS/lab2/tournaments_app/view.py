@@ -128,7 +128,6 @@ class MainWindow(tk.Tk):
         self.page_info_label.config(text=f"Страница {current_page} из {total_pages}")
         self.total_records_label.config(text=f"Всего записей: {total_records}")
 
-    # --- Обработчики вызовов (Защита MVC) ---
     def _on_load(self):
         filepath = filedialog.askopenfilename(filetypes=[("XML", "*.xml")])
         if filepath:

@@ -52,7 +52,7 @@ def generate_test_data() -> list:
         TournamentRecord("Chessable Masters", "07.02.2024", "Шахматы", "Магнус Карлсен", 300000),
         TournamentRecord("Grenke Chess Classic", "01.04.2024", "Шахматы", "Магнус Карлсен", 200000),
         
-        # Разное (Гольф, Покер, Снукер)
+        # Гольф, Покер, Снукер, Велоспорт, Американский футбол
         TournamentRecord("Masters Tournament", "14.04.2024", "Гольф", "Скотти Шеффлер", 20000000),
         TournamentRecord("PGA Championship", "19.05.2024", "Гольф", "Ксандер Шоффеле", 18500000),
         TournamentRecord("US Open Golf", "16.06.2024", "Гольф", "Брайсон Дешамбо", 21500000),

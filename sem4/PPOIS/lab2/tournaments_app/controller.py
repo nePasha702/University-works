@@ -7,7 +7,7 @@ class TournamentController:
     
     def __init__(self, view=None):
         self.model = TournamentModel()
-        self.view = view # Ссылка устанавливается извне (в main.py)
+        self.view = view
         
         self.current_page = 1
         self.search_results = []
@@ -29,7 +29,6 @@ class TournamentController:
         self.refresh_main_view()
         return len(test_records)
 
-    # --- УПРАВЛЕНИЕ ГЛАВНЫМ ОКНОМ ---
     def refresh_main_view(self):
         total_records = len(self.model.get_all_records())
         total_pages = self.model.get_total_pages()
@@ -68,7 +67,6 @@ class TournamentController:
             self.current_page = total_pages
             self.refresh_main_view()
 
-    # --- РАБОТА С ФАЙЛАМИ ---
     def load_file(self, filepath: str) -> tuple[bool, str]:
         try:
             XMLManager.load_from_xml(filepath, self.model)
@@ -85,7 +83,6 @@ class TournamentController:
         except Exception as e:
             return False, str(e)
 
-    # --- ДОБАВЛЕНИЕ ЗАПИСИ ---
     def add_record(self, data: dict) -> tuple[bool, str]:
         """Возвращает (Успех, Сообщение). View само решает, закрывать ли окно."""
         try:
@@ -110,27 +107,23 @@ class TournamentController:
         except ValueError:
             return False, "Размер призовых должен быть числом."
 
-    # --- ПОИСК И УДАЛЕНИЕ ---
     def _check_match(self, record: TournamentRecord, criteria: dict) -> bool:
         """
         Реализация AND/OR логики.
         Группы связаны через AND, условия внутри группы через OR.
         """
-        # Группа 1: Название турнира ИЛИ Дата (Если введено хотя бы одно)
         match_g1 = True
         if criteria.get("name") or criteria.get("date"):
             n_match = criteria.get("name", "").lower() in record.tournament_name.lower() if criteria.get("name") else False
             d_match = criteria.get("date") == record.date_held if criteria.get("date") else False
             match_g1 = n_match or d_match
 
-        # Группа 2: Вид спорта ИЛИ Победитель
         match_g2 = True
         if criteria.get("sport") or criteria.get("winner"):
             s_match = criteria.get("sport") == record.sport_type if criteria.get("sport") else False
             w_match = criteria.get("winner", "").lower() in record.winner_name.lower() if criteria.get("winner") else False
             match_g2 = s_match or w_match
 
-        # Группа 3: Призовые ИЛИ Заработок (с обработкой диапазонов)
         match_g3 = True
         has_prize = bool(criteria.get("prize_min") or criteria.get("prize_max"))
         has_earn = bool(criteria.get("earn_min") or criteria.get("earn_max"))
@@ -154,7 +147,6 @@ class TournamentController:
                 
             match_g3 = (has_prize and p_match) or (has_earn and e_match)
 
-        # Запись подходит, только если она проходит проверку по ВСЕМ заполненным группам
         return match_g1 and match_g2 and match_g3
 
     def execute_search(self, criteria: dict):
@@ -172,7 +164,6 @@ class TournamentController:
         records_to_show = self.model.get_records_for_page(self.search_current_page, self.search_results)
         self.view.search_dialog.update_results(records_to_show, self.search_current_page, max(1, total_pages), total_records)
 
-    # ... Методы пагинации поиска остаются прежними ...
     def search_next_page(self):
         if self.search_current_page < self.model.get_total_pages(self.search_results):
             self.search_current_page += 1

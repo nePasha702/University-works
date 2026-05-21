@@ -3,12 +3,10 @@ class TournamentRecord:
     
     def __init__(self, tournament_name: str, date_held: str, sport_type: str, winner_name: str, prize_pool: float):
         self.tournament_name = tournament_name
-        self.date_held = date_held  # Будем хранить как строку в формате "ДД.ММ.ГГГГ"
-        self.sport_type = sport_type
+        self.date_held = date_held 
         self.winner_name = winner_name
         self.prize_pool = float(prize_pool)
         
-        # Вычисляемое поле (60% от призовых) - рассчитывается автоматически
         self.winner_earnings = self._calculate_earnings()
 
     def _calculate_earnings(self) -> float:
@@ -31,8 +29,8 @@ class TournamentModel:
     """Класс, управляющий коллекцией записей (базой данных в памяти)."""
     
     def __init__(self):
-        self.records = []  # Основной массив всех записей
-        self.records_per_page = 10  # По умолчанию 10 записей на страницу
+        self.records = []  
+        self.records_per_page = 10 
 
     def add_record(self, record: TournamentRecord):
         """Добавление новой записи в массив."""
@@ -53,7 +51,6 @@ class TournamentModel:
             sports.add(record.sport_type)
         return sorted(list(sports))
 
-    # --- Методы для работы с пагинацией (постраничным выводом) ---
 
     def get_total_pages(self, data_list=None) -> int:
         """Возвращает общее количество страниц для переданного списка."""
@@ -63,7 +60,6 @@ class TournamentModel:
         if not data_list:
             return 1
             
-        # Формула расчета количества страниц с округлением вверх
         return (len(data_list) + self.records_per_page - 1) // self.records_per_page
 
     def get_records_for_page(self, page: int, data_list=None) -> list:
