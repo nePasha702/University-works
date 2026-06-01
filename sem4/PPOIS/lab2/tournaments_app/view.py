@@ -209,7 +209,7 @@ class SearchDialog(tk.Toplevel):
 
         unique_sports = self.controller.get_unique_sports()
 
-        filter_frame = ttk.LabelFrame(self, text="Критерии поиска (AND между группами, OR внутри групп)")
+        filter_frame = ttk.LabelFrame(self, text="Критерии поиска")
         filter_frame.pack(side=tk.TOP, fill=tk.X, padx=10, pady=5)
 
         ttk.Label(filter_frame, text="Название:").grid(row=0, column=0, padx=5, pady=5)

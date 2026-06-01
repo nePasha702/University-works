@@ -3,7 +3,8 @@ class TournamentRecord:
     
     def __init__(self, tournament_name: str, date_held: str, sport_type: str, winner_name: str, prize_pool: float):
         self.tournament_name = tournament_name
-        self.date_held = date_held 
+        self.date_held = date_held
+        self.sport_type = sport_type
         self.winner_name = winner_name
         self.prize_pool = float(prize_pool)
         
