@@ -3,7 +3,7 @@ import tkinter.font
 from tkinter import ttk, messagebox, filedialog
 
 class DatePicker(ttk.Frame):
-    """Собственный безопасный виджет для ввода даты."""
+    """ Виджет для ввода даты."""
     def __init__(self, parent):
         super().__init__(parent)
         days = [str(i).zfill(2) for i in range(1, 32)]

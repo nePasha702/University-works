@@ -15,7 +15,7 @@ class TournamentRecord:
         return round(self.prize_pool * 0.60, 2)
 
     def to_tuple(self) -> tuple:
-        """Удобный метод для передачи данных в таблицу интерфейса."""
+        """Метод для передачи данных в таблицу интерфейса."""
         return (
             self.tournament_name,
             self.date_held,
