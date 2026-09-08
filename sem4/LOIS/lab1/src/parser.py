@@ -77,6 +77,7 @@ def parse_formula(src: str, pos: int):
 
         return ASTNode('BINARY', op, left=left_child, right=right_child), pos + 1
 
+
     die(f"Неожиданный символ '{c}' при синтаксическом разборе")
 
 

@@ -10,10 +10,16 @@
 ################################################################################
 :- encoding(utf8).
 
-target_state([_, _, _, N4, N5, N6, _, _, _, N10, _, _, _]) :-
+% 1. Начальное состояние (твоя исходная конфигурация)
+initial_state([0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0]).
+
+% 2. Целевое состояние
+target_state([0, 0, 0, N4, N5, N6, 0, 0, 0, N10, 0, 0, 0]) :-
+    member(N4, [0, 1]), member(N5, [0, 1]), member(N6, [0, 1]), member(N10, [0, 1]),
     Sum is N4 + N5 + N6 + N10,
     Sum =:= 3.
 
+% 3. Правила переходов
 move(State, rotate(c1, cw), NextState) :-
     State = [N1,N2,N3,N4,N5,N6, N7,N8,N9,N10,N11,N12,N13],
     NextState = [N6,N1,N2,N3,N4,N5, N7,N8,N9,N10,N11,N12,N13].
@@ -38,29 +44,24 @@ move(State, rotate(c3, ccw), NextState) :-
     State = [N1,N2,N3,N4,N5,N6, N7,N8,N9,N10,N11,N12,N13],
     NextState = [N1,N2,N3,N4,N10,N5, N7,N8,N9,N11,N12,N13,N6].
 
-solve(InitialState, Path) :-
-    bfs([[InitialState, []]], [], RevPath),
-    reverse(RevPath, Path).
+% 4. Главный предикат поиска (IDDFS)
+solve(Moves) :-
+    initial_state(Init),
+    target_state(Target),
+    length(Moves, _),
+    solve_path(Init, Target, Moves, [Init]).
 
-bfs([[CurrentState, Path] | _], _, Path) :-
-    target_state(CurrentState), !.
+solve_path(Target, Target, [], _Visited).
 
-bfs([[CurrentState, CurrentPath] | RestQueue], Visited, FinalPath) :-
-    findall(
-        [NextState, [Action | CurrentPath]],
-        (
-            move(CurrentState, Action, NextState),
-            \+ member(NextState, Visited) % Проверка, что состояние не посещалось
-        ),
-        NewNodes
-    ),
-    append(RestQueue, NewNodes, NextQueue),
-    bfs(NextQueue, [CurrentState | Visited], FinalPath).
+solve_path(Current, Target, [Move | RestMoves], Visited) :-
+    move(Current, Move, Next),
+    \+ member(Next, Visited),
+    solve_path(Next, Target, RestMoves, [Next | Visited]).
 
+% Точка входа
 begin :-
-    Init = [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0],
-    writeln('--- Поиск оптимального пути (BFS) ---'),
-    ( solve(Init, Path) ->
+    writeln('--- Поиск оптимального пути (IDDFS) ---'),
+    ( solve(Path) ->
         writeln('Кратчайший путь найден:'),
         maplist(writeln, Path)
     ;
