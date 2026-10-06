@@ -1,0 +1,151 @@
+@startuml НаправлениеРазвития_ДополнительныеУслуги
+!theme plain
+top to bottom direction
+
+'========================================
+' ЛЕГЕНДА
+'========================================
+legend top left
+  |<back:#87CEEB> Новые классы </back>| Добавленные классы
+  |<back:#FFFFFF> Существующие </back>| Существующие классы
+endlegend
+
+'========================================
+' ПАКЕТ: МОДЕЛЬ
+'========================================
+package "Модель" as Model {
+    '=== Существующие классы ===
+    class "Бронирование" as Booking {
+    }
+
+    '=== НОВЫЕ классы для дополнительных услуг ===
+    class "ДополнительнаяУслуга" as AdditionalService #87CEEB {
+        +идУслуги: String
+        +название: String
+        +описание: String
+        +базоваяСтоимость: Double
+        +категория: String
+    }
+
+    class "ЗаказУслуги" as ServiceOrder #87CEEB {
+        +идЗаказа: String
+        +статусВыполнения: String
+        +итоговаяСтоимость: Double
+        +желаемоеВремя: Date
+        +комментарийКлиента: String
+    }
+
+    '=== НОВЫЕ Репозитории ===
+    class "РепозиторийУслуг" as ServiceCatalogRepo #87CEEB {
+        +получитьДоступныеУслуги(категория: String): List<ДополнительнаяУслуга>
+        +найтиУслугу(идУслуги: String): ДополнительнаяУслуга
+    }
+
+    class "РепозиторийЗаказовУслуг" as ServiceOrderRepo #87CEEB {
+        +сохранитьЗаказ(заказ: ЗаказУслуги): void
+        +получитьЗаказыПоБрони(идБрони: String): List<ЗаказУслуги>
+        +обновитьСтатус(идЗаказа: String, статус: String): void
+    }
+
+    ServiceOrder "1..*" o-- "1" Booking : +привязкаКБрони
+    ServiceOrder "1..*" o-- "1" AdditionalService : +выбраннаяУслуга
+    ServiceCatalogRepo "1" o-- "0..*" AdditionalService : +каталог
+    ServiceOrderRepo "1" o-- "0..*" ServiceOrder : +базаЗаказов
+}
+
+'========================================
+' ПАКЕТ: КОНТРОЛЛЕРЫ
+'========================================
+package "Контроллеры" as Controllers {
+    '=== Существующие классы ===
+    class "КонтроллерБронирования" as BookingCtrl {
+    }
+
+    '=== Паттерн Стратегия/Обработчик для разных типов услуг ===
+    interface "IОбработчикУслуги" as IServiceHandler <<interface>> #87CEEB {
+        +проверитьДоступность(услуга: ДополнительнаяУслуга, время: Date): Boolean
+        +оформитьЗаказ(заказ: ЗаказУслуги): Boolean
+    }
+
+    class "ОбработчикРесторана" as RestaurantHandler #87CEEB {
+        +проверитьДоступность(услуга: ДополнительнаяУслуга, время: Date): Boolean
+        +оформитьЗаказ(заказ: ЗаказУслуги): Boolean
+        -забронироватьСтолик(): void
+    }
+
+    class "ОбработчикТрансфера" as TransferHandler #87CEEB {
+        +проверитьДоступность(услуга: ДополнительнаяУслуга, время: Date): Boolean
+        +оформитьЗаказ(заказ: ЗаказУслуги): Boolean
+        -вызватьТакси(): void
+    }
+    
+    class "ОбработчикСпа" as SpaHandler #87CEEB {
+        +проверитьДоступность(услуга: ДополнительнаяУслуга, время: Date): Boolean
+        +оформитьЗаказ(заказ: ЗаказУслуги): Boolean
+        -назначитьСпециалиста(): void
+    }
+
+    RestaurantHandler ..|> IServiceHandler
+    TransferHandler ..|> IServiceHandler
+    SpaHandler ..|> IServiceHandler
+
+    '=== НОВЫЙ контроллер ===
+    class "КонтроллерДополнительныхУслуг" as AddServicesCtrl #87CEEB {
+        +получитьКаталогУслуг(): List<ДополнительнаяУслуга>
+        +добавитьУслугуКБрони(идБрони: String, идУслуги: String, детали: String): ЗаказУслуги
+        +отменитьЗаказУслуги(идЗаказа: String): void
+        +рассчитатьДоплату(идБрони: String): Double
+    }
+
+    AddServicesCtrl "1" o-- "0..*" IServiceHandler : +обработчики
+    AddServicesCtrl "1" o-- "1" ServiceCatalogRepo : +каталогУслуг
+    AddServicesCtrl "1" o-- "1" ServiceOrderRepo : +репозиторийЗаказов
+
+    BookingCtrl ..> AddServicesCtrl : <<использует>>
+}
+
+'========================================
+' ПАКЕТ: ПРЕДСТАВЛЕНИЕ
+'========================================
+package "Представление" as View {
+    '=== Существующие интерфейсы ===
+    interface "IПредставление" as IView <<interface>> {
+    }
+
+    '=== НОВЫЙ интерфейс для экрана заказа услуг ===
+    interface "IПредставлениеДопУслуг" as IAddServicesView <<interface>> #87CEEB {
+        +показатьМенюУслуг(услуги: List<ДополнительнаяУслуга>): void
+        +отобразитьФормуЗаказа(услуга: ДополнительнаяУслуга): void
+        +показатьДобавленныеУслуги(заказы: List<ЗаказУслуги>): void
+    }
+
+    IView <|-- IAddServicesView
+    IAddServicesView "1" --> "1" AddServicesCtrl : +контроллер
+}
+
+'========================================
+' ИНФРАСТРУКТУРА
+'========================================
+package "Инфраструктура" as Infra {
+    class "КонтейнерЗависимостей" as DIContainer <<injector>> {
+    }
+
+    '=== НОВАЯ фабрика для подсистемы доп услуг ===
+    class "ФабрикаДопУслуг" as AddServicesFactory <<injector>> #87CEEB {
+        +создатьКонтроллерУслуг(репозитории: List, обработчики: List<IОбработчикУслуги>): КонтроллерДополнительныхУслуг
+        +создатьОбработчики(): List<IОбработчикУслуги>
+        +создатьПредставлениеУслуг(контроллер: КонтроллерДополнительныхУслуг): IПредставлениеДопУслуг
+    }
+
+    DIContainer "1" o-- "1" AddServicesFactory : +фабрикаУслуг
+    AddServicesFactory ..> AddServicesCtrl : <<создает>>
+    AddServicesFactory ..> RestaurantHandler : <<создает>>
+    AddServicesFactory ..> TransferHandler : <<создает>>
+    AddServicesFactory ..> SpaHandler : <<создает>>
+    AddServicesFactory ..> IAddServicesView : <<создает>>
+}
+
+Controllers -[hidden]down- Model
+Infra -[hidden]down- Controllers
+
+@enduml

@@ -1,0 +1,114 @@
+@startuml
+!theme plain
+title Sequence диаграмма: Процесс бронирования гостиничного номера
+
+actor "Клиент" as Client
+actor "Администратор" as Admin
+
+boundary "Пользовательский интерфейс" as UserInterface
+boundary "Интерфейс администратора" as AdminInterface
+
+control "Контроллер аутентификации" as AuthController
+control "Контроллер бронирования" as BookingController
+control "Контроллер номерного фонда" as RoomController
+
+entity "Репозиторий учетных записей" as AccountRepository
+entity "Репозиторий номерного фонда" as RoomRepository
+entity "Репозиторий бронирований" as BookingRepository
+
+' --- Авторизация ---
+Client -> UserInterface: ввестиДанныеДляВхода(логин, пароль)
+activate UserInterface
+UserInterface -> AuthController: авторизоватьПользователя(логин, пароль)
+activate AuthController
+AuthController -> AccountRepository: проверитьУчетныеДанные(логин, пароль)
+activate AccountRepository
+AccountRepository --> AuthController: результатПроверки(успешно)
+deactivate AccountRepository
+AuthController --> UserInterface: токенДоступа
+deactivate AuthController
+UserInterface --> Client: отобразитьГлавныйЭкран()
+deactivate UserInterface
+
+' --- Поиск свободных номеров ---
+Client -> UserInterface: задатьПараметрыПоиска(даты)
+activate UserInterface
+UserInterface -> BookingController: запроситьСвободныеНомера(даты)
+activate BookingController
+BookingController -> RoomController: получитьДоступныеНомера(даты)
+activate RoomController
+RoomController -> RoomRepository: найтиНомераПоКритериям(даты)
+activate RoomRepository
+RoomRepository --> RoomController: списокНомеров
+deactivate RoomRepository
+RoomController --> BookingController: отфильтрованныйСписок
+deactivate RoomController
+BookingController --> UserInterface: данныеОНомерах
+deactivate BookingController
+UserInterface --> Client: показатьСписокНомеров()
+deactivate UserInterface
+
+' --- Бронирование номера ---
+Client -> UserInterface: выбратьНомерИЗабронировать(idНомера)
+activate UserInterface
+UserInterface -> BookingController: создатьБронирование(idНомера, даты)
+activate BookingController
+
+BookingController -> RoomController: проверитьАктуальнуюДоступность(idНомера)
+activate RoomController
+RoomController -> RoomRepository: получитьСтатусНомера(idНомера)
+activate RoomRepository
+RoomRepository --> RoomController: статус(свободен)
+deactivate RoomRepository
+RoomController --> BookingController: доступностьПодтверждена
+deactivate RoomController
+
+alt Номер свободен
+    BookingController -> BookingRepository: сохранитьДанныеБронирования(бронь)
+    activate BookingRepository
+    BookingRepository --> BookingController: броньСохранена(idБрони)
+    deactivate BookingRepository
+    
+    BookingController -> RoomController: обновитьСтатусНомера(idНомера, "Забронирован")
+    activate RoomController
+    RoomController -> RoomRepository: записатьНовыйСтатус(idНомера)
+    activate RoomRepository
+    RoomRepository --> RoomController: статусОбновлен
+    deactivate RoomRepository
+    RoomController --> BookingController: обновлениеПодтверждено
+    deactivate RoomController
+
+    par Уведомление клиента и администратора
+        BookingController --> UserInterface: бронированиеУспешно(деталиБрони)
+        UserInterface --> Client: показатьПодтверждение()
+        
+        BookingController -> AdminInterface: отправитьУведомлениеОБронировании(деталиБрони)
+        activate AdminInterface
+        AdminInterface --> Admin: отобразитьНовоеБронирование()
+        deactivate AdminInterface
+    end
+
+else Номер уже занят
+    BookingController --> UserInterface: ошибкаБронирования(номерЗанят)
+    UserInterface --> Client: показатьУведомлениеОбОтказе()
+end
+deactivate BookingController
+deactivate UserInterface
+
+' --- Действия администратора ---
+opt Просмотр актуальных бронирований
+    Admin -> AdminInterface: просмотретьСписокБронирований()
+    activate AdminInterface
+    AdminInterface -> BookingController: запроситьАктуальныеБронирования()
+    activate BookingController
+    BookingController -> BookingRepository: получитьВсеБронирования()
+    activate BookingRepository
+    BookingRepository --> BookingController: списокБронирований
+    deactivate BookingRepository
+    BookingController --> AdminInterface: данныеДляОтображения
+    deactivate BookingController
+    AdminInterface --> Admin: показатьТаблицуБронирований()
+    deactivate AdminInterface
+end
+
+@enduml

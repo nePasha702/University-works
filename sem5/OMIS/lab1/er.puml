@@ -1,0 +1,65 @@
+@startchen
+entity "Учетная запись" as A {
+  "ID аккаунта" as k1<<key>>
+  "Логин" as a1
+  "Пароль" as a2
+  "Роль" as a3
+}
+entity "Клиент" as C {
+  "ID клиента" as k2<<key>>
+  "Имя" as c1
+  "Контакты" as c2
+}
+entity "Администратор" as M {
+  "ID админа" as k3<<key>>
+  "ФИО" as m1
+  "Табельный" as m2
+}
+entity "Бронирование" as B {
+  "ID брони" as k4<<key>>
+  "Заезд" as b1
+  "Выезд" as b2
+  "Статус" as b3
+}
+entity "Номер" as R {
+  "№ комнаты" as k5<<key>>
+  "Категория" as r1
+  "Вместимость" as r2
+  "Статус" as r3
+}
+entity "Отчёт" as P {
+  "ID отчёта" as k6<<key>>
+  "Дата" as p1
+  "Тип" as p2
+}
+
+relationship "Профиль" as L1 {
+}
+relationship "Привязка" as L2 {
+}
+relationship "Оформляет" as L3 {
+}
+relationship "Обработка" as L4 {
+}
+relationship "Включает" as L5 {
+}
+relationship "Управляет" as L6 {
+}
+relationship "Формирует" as L7 {
+}
+
+A =1= L1
+L1 -1- C
+A =1= L2
+L2 -1- M
+C =1= L3
+L3 -N- B
+M =1= L4
+L4 -N- B
+R =N= L5
+L5 -N- B
+M =1= L6
+L6 -N- R
+M =1= L7
+L7 -N- P
+@endchen

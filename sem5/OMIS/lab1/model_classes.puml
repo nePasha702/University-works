@@ -1,0 +1,177 @@
+@startuml ЭлектроннаяСистемаБронирования_Полная
+!theme plain
+top to bottom direction
+
+'========================================
+' ПАКЕТ: ТОЧКА ВХОДА
+'========================================
+package "ТочкаВхода" {
+    class "ПриложениеСистемыБронирования" as App <<application>> {
+        +main(args: String[]): void
+        +инициализироватьСистему(): void
+    }
+    class "КонфигураторСистемы" as Configurator {
+        +настроитьЗависимости(контейнер: КонтейнерЗависимостей): void
+        +связатьКомпоненты(): void
+    }
+    App "1" o-- "1" Configurator : +конфигуратор
+}
+
+'========================================
+' ПАКЕТ: ИНФРАСТРУКТУРА
+'========================================
+package "Инфраструктура" {
+    class "КонтейнерЗависимостей" as DIContainer <<injector>> {
+        +зарегистрировать(интерфейс: Class, реализация: Class): void
+        +разрешить(интерфейс: Class): Object
+    }
+    class "ФабрикаКонтроллеров" as FactoryCtrl <<injector>> {
+        +создатьКонтроллерАутентификации(): КонтроллерАутентификации
+        +создатьКонтроллерБронирования(): КонтроллерБронирования
+        +создатьКонтроллерНомерногоФонда(): КонтроллерНомерногоФонда
+    }
+    class "ФабрикаПредставлений" as FactoryView <<injector>> {
+        +создатьПредставлениеКлиента(): IПредставлениеКлиента
+        +создатьПредставлениеАдмина(): IПредставлениеАдмина
+    }
+    DIContainer "1" o-- "1" FactoryCtrl
+    DIContainer "1" o-- "1" FactoryView
+    Configurator ..> DIContainer : <<настраивает>>
+}
+
+'========================================
+' ПАКЕТ: ПРЕДСТАВЛЕНИЕ
+'========================================
+package "Представление" {
+    interface "IПредставление" as IView <<interface>> {
+        +отобразить(данные: Object): void
+        +показатьУведомление(сообщение: String): void
+    }
+    abstract class "БазовоеПредставление" as BaseView {
+        #идПредставления: String
+        +отобразить(данные: Object): void
+        +показатьУведомление(сообщение: String): void
+    }
+    BaseView ..|> IView
+    
+    class "ПредставлениеКлиента" as ClientView {
+        +ввестиДанныеДляВхода(): void
+        +задатьПараметрыПоиска(): void
+        +выбратьНомерИЗабронировать(): void
+    }
+    class "ПредставлениеАдмина" as AdminView {
+        +просмотретьСписокБронирований(): void
+        +изменитьСтатусНомера(): void
+    }
+    BaseView <|-- ClientView
+    BaseView <|-- AdminView
+}
+
+'========================================
+' ПАКЕТ: КОНТРОЛЛЕРЫ
+'========================================
+package "Контроллеры" {
+    class "КонтроллерАутентификации" as AuthCtrl {
+        +авторизоватьПользователя(логин, пароль): Boolean
+    }
+    class "КонтроллерБронирования" as BookingCtrl {
+        +запроситьСвободныеНомера(даты): List
+        +создатьБронирование(idНомера, даты): void
+    }
+    class "КонтроллерНомерногоФонда" as RoomCtrl {
+        +проверитьАктуальнуюДоступность(idНомера): Boolean
+        +обновитьСтатусНомера(idНомера, статус): void
+    }
+    class "КонтроллерОтчетов" as ReportCtrl {
+        +сформироватьСводныеДанные(): Отчет
+    }
+    
+    ClientView "1" --> "1" AuthCtrl : <<использует>>
+    ClientView "1" --> "1" BookingCtrl : <<использует>>
+    AdminView "1" --> "1" RoomCtrl : <<использует>>
+    AdminView "1" --> "1" ReportCtrl : <<использует>>
+    
+    BookingCtrl --> RoomCtrl : <<делегирует>>
+}
+
+'========================================
+' ПАКЕТ: РЕПОЗИТОРИИ
+'========================================
+package "Репозитории" {
+    interface "IРепозиторий" as IRepo <<interface>> {
+        +получитьПоИд(ид: String): Object
+        +сохранить(объект: Object): void
+    }
+    class "РепозиторийУчетныхЗаписей" as AccRepo {
+        +найтиПоЛогину(логин: String): УчетнаяЗапись
+    }
+    class "РепозиторийНомерногоФонда" as RoomRepo {
+        +найтиНомераПоКритериям(даты: Date): List
+    }
+    class "РепозиторийБронирований" as BookingRepo {
+        +получитьВсеБронирования(): List
+    }
+    
+    IRepo <|.. AccRepo
+    IRepo <|.. RoomRepo
+    IRepo <|.. BookingRepo
+    
+    AuthCtrl "1" --> "1" AccRepo
+    BookingCtrl "1" --> "1" BookingRepo
+    RoomCtrl "1" --> "1" RoomRepo
+}
+
+'========================================
+' ПАКЕТ: МОДЕЛЬ
+'========================================
+package "Модель" {
+    abstract class "Пользователь" as User {
+        +идПользователя: String
+        +имя: String
+    }
+    class "Клиент" as Client {
+        +контакты: String
+    }
+    class "Администратор" as Admin {
+        +табельный: String
+    }
+    User <|-- Client
+    User <|-- Admin
+    
+    class "УчетнаяЗапись" as Account {
+        +логин: String
+        +пароль: String
+        +роль: String
+    }
+    Account "1" o-- "1" User : +профиль
+    
+    class "Номер" as Room {
+        +номерКомнаты: String
+        +категория: String
+        +вместимость: Integer
+        +статус: String
+    }
+    class "Бронирование" as Booking {
+        +идБрони: String
+        +даты: Date
+        +статус: String
+    }
+    class "Отчет" as Report {
+        +содержание: String
+    }
+    
+    Booking "*" o-- "1" Client : +клиент
+    Booking "*" o-- "1" Room : +номер
+    
+    AccRepo "1" o-- "*" Account
+    RoomRepo "1" o-- "*" Room
+    BookingRepo "1" o-- "*" Booking
+}
+
+App -[hidden]down-> DIContainer
+DIContainer -[hidden]down-> IView
+IView -[hidden]down-> AuthCtrl
+AuthCtrl -[hidden]down-> IRepo
+IRepo -[hidden]down-> User
+
+@enduml
