@@ -1,0 +1,48 @@
+@startuml
+skinparam shadowing false
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 14
+skinparam roundcorner 0
+
+skinparam rectangle {
+    BackgroundColor #FFFFFF
+    BorderColor #222222
+    FontStyle bold
+}
+
+skinparam artifact {
+    BackgroundColor #F2F2F2
+    BorderColor #555555
+    FontStyle normal
+}
+
+skinparam note {
+    BackgroundColor #FEFECE
+    BorderColor #555555
+}
+
+rectangle "process/ — процесс собеседования и soft skills" as domain_box {
+    artifact "stages/\nЭтапы собеседования" as stages
+    artifact "behavioral/\nПоведенческие вопросы" as behavioral
+    artifact "frameworks/\nМетодики и шаблоны ответов" as frameworks
+    
+    artifact "strategies/\nСтратегии подготовки" as strategies
+    artifact "pitfalls/\nТипичные ошибки" as pitfalls
+    artifact "checklists/\nКонтрольные списки" as checklists
+
+    stages -[hidden]right- behavioral
+    behavioral -[hidden]right- frameworks
+    
+    stages -[hidden]down- strategies
+    behavioral -[hidden]down- pitfalls
+    frameworks -[hidden]down- checklists
+}
+
+note right of checklists
+Все категории используют Markdown + YAML.
+id, title, domain, category, difficulty — обязательны.
+related и prerequisites — ссылки по ID, если заданы.
+Категории не являются отдельными Python-подклассами.
+end note
+
+@enduml

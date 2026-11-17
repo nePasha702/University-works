@@ -1,0 +1,61 @@
+@startuml
+skinparam shadowing false
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 14
+skinparam roundcorner 0
+
+skinparam object {
+    BackgroundColor #F2F2F2
+    BorderColor #555555
+}
+
+skinparam note {
+    BackgroundColor #FEFECE
+    BorderColor #555555
+}
+
+object "PROC-FRAMEWORK-001 : карточка методики" as card {
+    title = Метод STAR для поведенческих интервью
+    domain = process
+    category = framework
+    difficulty = junior
+}
+
+object "YAML: дополнительные поля" as yaml {
+    tags = communication, behavioral, core
+    roles = all_roles
+    interview_stage = behavioral
+    frequency = must_know
+    related = PROC-BEHAVIORAL-003
+    status = approved
+    sources = Cracking the Coding Interview
+}
+
+object "Markdown: содержимое" as md {
+    заголовок = Метод STAR
+    раздел = Определение и структура
+    материал = описание шагов S, T, A, R и примеры
+}
+
+object "Связанная карточка" as rel {
+    id = PROC-BEHAVIORAL-003
+}
+
+object "Фрагмент для RAG" as rag #E8F0FE {
+    source_id = PROC-FRAMEWORK-001
+    section = заголовок раздела
+    text = часть исходного текста
+    version = версия содержимого
+}
+
+card *-- yaml : необязательные метаданные
+card *-- md : текст документа
+yaml --> rel : related (ссылка по ID)
+md ..> rag : проектируемое разбиение
+
+note bottom of rag
+Фрагменты и их векторы производны.
+Они не изменяют формат исходной карточки.
+end note
+
+@enduml
