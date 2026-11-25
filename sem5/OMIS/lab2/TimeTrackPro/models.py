@@ -440,7 +440,9 @@ class HRAdmin(User):
             if result.isClosed:
                 raise ValueError("Табель за этот период закрыт.")
             employees = db.execute("""SELECT * FROM users WHERE role!='hradmin' AND hired_on<=?
-                                   ORDER BY role='manager', id""", (end,))
+                                   ORDER BY role='manager', id""", (end,)).fetchall()
+            if not employees:
+                raise ValueError("За выбранный период нет сотрудников для табеля.")
             for employee in employees:
                 employee_id = employee["id"]
                 approved = db.execute("""SELECT start,end FROM requests WHERE employee_id=?

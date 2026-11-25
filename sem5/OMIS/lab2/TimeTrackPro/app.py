@@ -142,8 +142,8 @@ class UI(ABC):
 
 
 class WebUI(UI):
-    def __init__(self):
-        self.session = st.session_state
+    def __init__(self, session):
+        self.session = session
         try:
             self.user = User.load(self.session.user_id) if "user_id" in self.session else None
         except ValueError:
@@ -700,8 +700,6 @@ class WebUI(UI):
             sheet = self.report()
         except ValueError as exc:
             return f'{top}<p class="notice error">{esc(exc)}</p>'
-        if not sheet.records:
-            return f'{top}<p>За выбранный период нет сотрудников для табеля.</p>'
         rows = "".join(f"<tr><td>{index}</td><td>{esc(record.employee_label)}</td>"
                        f"<td>{record.plannedHours:.2f}".rstrip("0").rstrip(".") + "</td>"
                        f"<td>{record.corrected_hours:.2f}".rstrip("0").rstrip(".") + "</td></tr>"
@@ -755,12 +753,20 @@ class WebUI(UI):
         )
 
 
+class TimeTrackProApp:
+    """Точка входа и сборки компонентов TimeTrackPro."""
+
+    def run(self):
+        st.set_page_config(page_title="TimeTrackPro", layout="wide", initial_sidebar_state="collapsed")
+        session = st.session_state
+        if "_seeded" not in session:
+            seed()
+            session._seeded = True
+        WebUI(session).run()
+
+
 def main():
-    st.set_page_config(page_title="TimeTrackPro", layout="wide", initial_sidebar_state="collapsed")
-    if "_seeded" not in st.session_state:
-        seed()
-        st.session_state._seeded = True
-    WebUI().run()
+    TimeTrackProApp().run()
 
 
 if __name__ == "__main__":
