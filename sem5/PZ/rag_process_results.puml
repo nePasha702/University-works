@@ -1,0 +1,27 @@
+@startuml
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 17
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam rectangle {
+  BackgroundColor #F5F7FA
+  BorderColor #34445A
+  FontColor #162439
+  RoundCorner 9
+}
+skinparam ArrowColor #34445A
+top to bottom direction
+
+rectangle "<b>Первый прогон по process/</b>\n42 сценария" as domain #E8EEF6
+rectangle "<b>Ранжирование</b>\n33 запроса с полным или частичным материалом" as ranking
+rectangle "<b>Оценка ответа</b>\n32 запроса с полным материалом" as answer
+rectangle "Precision@1 — 54,5 %\nRecall@10 — 97,0 %" as ranks
+rectangle "12 полных, 7 частичных\n13 нерелевантных или отсутствующих" as answers
+
+domain -down-> ranking
+domain -down-> answer
+ranking -[hidden]right-> answer
+ranking -down-> ranks
+answer -down-> answers
+ranks -[hidden]right-> answers
+@enduml

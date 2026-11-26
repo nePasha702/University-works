@@ -1,0 +1,24 @@
+@startuml
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 17
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam activity {
+  BackgroundColor #F5F7FA
+  BorderColor #34445A
+  FontColor #162439
+  DiamondBackgroundColor #E8EEF6
+  ArrowColor #34445A
+}
+
+start
+:Разметить вопрос, карточки, факты\nи ожидаемый исход;
+:Выполнить POST /api/ask\nи записать статус, источники и время;
+fork
+  :Сверить порядок ID\nс разметкой;
+fork again
+  :Сверить ответ с фактами\nи исходным Markdown;
+end fork
+:Зафиксировать оценку\nи причину ошибки;
+stop
+@enduml

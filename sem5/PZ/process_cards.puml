@@ -1,0 +1,27 @@
+@startuml
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 17
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam rectangle {
+  BackgroundColor #F5F7FA
+  BorderColor #34445A
+  FontColor #162439
+  RoundCorner 9
+}
+skinparam ArrowColor #34445A
+top to bottom direction
+
+rectangle "Исходный набор\n20 карточек" as original
+rectangle "Командное пополнение\n55 новых карточек" as addition
+rectangle "<b>process/</b>\n75 карточек" as total #E8EEF6
+rectangle "Поведенческие вопросы — 17\nЧек-листы — 14\nМетодики ответа — 13" as left
+rectangle "Гибкие навыки — 11\nЭтапы интервью — 7\nСтратегии — 13" as right
+
+original -down-> total
+addition -down-> total
+original -[hidden]right-> addition
+total -down-> left
+total -down-> right
+left -[hidden]right-> right
+@enduml

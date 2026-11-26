@@ -1,0 +1,26 @@
+@startuml
+skinparam defaultFontName DejaVu Sans
+skinparam defaultFontSize 17
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam sequence {
+  ArrowColor #34445A
+  LifeLineBorderColor #677A92
+  ParticipantBorderColor #34445A
+  ParticipantBackgroundColor #E8EEF6
+  ParticipantFontColor #162439
+}
+hide footbox
+
+actor "Кандидат" as user
+participant "Решатель" as solver
+database "База знаний" as corpus
+
+user -> solver: Вопрос о STAR и видеозвонке
+solver -> solver: Выделить две части
+solver -> corpus: Найти блоки о методе STAR
+corpus --> solver: PROC-FRAMEWORK-001
+solver -> corpus: Найти блоки перед видеозвонком
+corpus --> solver: PROC-CHECKLIST-014
+solver --> user: Ответ из двух карточек\nи ссылки на источники
+@enduml
